@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtwcrksdqqql3"]
+[gd_scene load_steps=4 format=3 uid="uid://dtwcrksdqqql3"]
 
 [ext_resource type="PackedScene" uid="uid://bynw4w6cvddmx" path="res://component/type.tscn" id="1_5rr6r"]
 [ext_resource type="Script" path="res://mon/color_mon.gd" id="1_yrwmc"]
 
-[node name="ColorMon" type="Node3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qm3cm"]
+
+[node name="ColorMon" type="CharacterBody3D"]
 script = ExtResource("1_yrwmc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_qm3cm")
 
 [node name="Type" parent="." instance=ExtResource("1_5rr6r")]
