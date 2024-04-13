@@ -1,6 +1,7 @@
 extends Node
 
 @onready var battle_scene = preload("res://level/battle.tscn")
+@onready var bgm_player: AudioStreamPlayer = $BGMPlayer
 
 
 func _input(event):
@@ -14,3 +15,8 @@ func start_battle(player_mon: PackedScene, wild_mon: PackedScene):
 	battle.player_mon = player_mon
 	battle.wild_mon = wild_mon
 	add_child(battle)
+	bgm_player.stop()
+
+
+func end_battle():
+	bgm_player.play()

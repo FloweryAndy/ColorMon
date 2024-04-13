@@ -64,3 +64,6 @@ spot_range = 75.0
 spot_angle = 60.0
 
 [node name="BattleUI" parent="." instance=ExtResource("2_xqlu3")]
+
+[node name="BattleMusic" type="AudioStreamPlayer" parent="."]
+autoplay = true
