@@ -1,6 +1,12 @@
-[gd_scene format=3 uid="uid://bcgy5544ts3y"]
+[gd_scene load_steps=2 format=3 uid="uid://bcgy5544ts3y"]
+
+[ext_resource type="PackedScene" uid="uid://b6wdb2yiytt2r" path="res://object/world/tall_grass.tscn" id="1_pgdlq"]
 
 [node name="Overworld" type="Node3D"]
+
+[node name="TallGrasses" type="Node3D" parent="."]
+
+[node name="TallGrass" parent="TallGrasses" instance=ExtResource("1_pgdlq")]
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.965926, 0.12941, -0.224144, 0, 0.866025, 0.5, 0.258819, -0.482963, 0.836516, 0, 0, 0)

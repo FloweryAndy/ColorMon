@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://b6wdb2yiytt2r"]
+[gd_scene load_steps=5 format=3 uid="uid://b6wdb2yiytt2r"]
+
+[ext_resource type="Script" path="res://object/world/tall_grass.gd" id="1_g635a"]
+[ext_resource type="PackedScene" uid="uid://6iqx6d2x80na" path="res://model/grass.glb" id="2_4fpvu"]
+
+[sub_resource type="Animation" id="Animation_3e6iu"]
+resource_name = "rustle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_62een"]
+_data = {
+"rustle": SubResource("Animation_3e6iu")
+}
 
 [node name="TallGrass" type="Node3D"]
+script = ExtResource("1_g635a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_62een")
+}
+
+[node name="grass" parent="." instance=ExtResource("2_4fpvu")]
