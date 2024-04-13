@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6wdb2yiytt2r"]
+[gd_scene load_steps=6 format=3 uid="uid://b6wdb2yiytt2r"]
 
 [ext_resource type="Script" path="res://object/world/tall_grass.gd" id="1_g635a"]
 [ext_resource type="PackedScene" uid="uid://6iqx6d2x80na" path="res://model/grass.glb" id="2_4fpvu"]
@@ -11,6 +11,9 @@ _data = {
 "rustle": SubResource("Animation_3e6iu")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_eqvty"]
+size = Vector3(2, 2, 2)
+
 [node name="TallGrass" type="Node3D"]
 script = ExtResource("1_g635a")
 
@@ -20,3 +23,10 @@ libraries = {
 }
 
 [node name="grass" parent="." instance=ExtResource("2_4fpvu")]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_eqvty")

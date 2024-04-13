@@ -2,6 +2,5 @@ extends Node
 
 
 func _input(event):
-	if event is InputEventKey and event.pressed:
-		if event.scancode == KEY_ESCAPE:
-			get_tree().quit()
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
