@@ -12,11 +12,14 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is Character:
 		animation_player.play("rustle")
-		area.tall_grass_ticks += 1
-		if area.has_method("check_tall_grass"):
-			area.check_tall_grass()
+		body.tall_grass_ticks += 1
+		body.is_in_tall_grass = true
+		if body.has_method("check_tall_grass"):
+			body.check_tall_grass()
 
 
 func _on_body_exited(body: Node3D) -> void:
 	if body is Character:
-		pass
+		body.tall_grass_ticks -= 1
+		if body.tall_grass_ticks <= 0:
+			body.is_in_tall_grass = false
