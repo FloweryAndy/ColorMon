@@ -1,0 +1,145 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmya000hgwvyx"]
+
+[ext_resource type="Script" path="res://ui/OptionsMenu.gd" id="1_axwqo"]
+
+[node name="EscapeMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 128
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="OptionsMenu" type="Control" parent="MarginContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("1_axwqo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "ColorMon"
+horizontal_alignment = 1
+
+[node name="Empty" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Resume"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Exit Game"
+
+[node name="Empty" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="MasterSliderLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2/VBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -20.0
+max_value = 0.0
+value = -10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="SFXSliderLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "SFX Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -20.0
+max_value = 0.0
+value = -10.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="BGMSliderLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "BGM Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BGMSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -20.0
+max_value = 0.0
+value = -10.0

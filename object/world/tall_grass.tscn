@@ -64,3 +64,4 @@ shape = SubResource("BoxShape3D_eqvty")
 [node name="RustleNoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6x548")
 volume_db = -14.0
+bus = &"SFX"
