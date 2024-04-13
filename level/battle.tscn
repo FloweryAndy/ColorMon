@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bquhw7qf243gb"]
+[gd_scene load_steps=8 format=3 uid="uid://bquhw7qf243gb"]
 
 [ext_resource type="Script" path="res://level/battle.gd" id="1_f23gr"]
+[ext_resource type="PackedScene" uid="uid://dfs44v0ck7qtk" path="res://ui/battle_ui.tscn" id="2_xqlu3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfqqe"]
 albedo_color = Color(1, 1, 0.72549, 1)
@@ -61,3 +62,5 @@ transform = Transform3D(0.872597, -0.178851, 0.454518, 0.0675346, 0.965789, 0.25
 light_energy = 8.0
 spot_range = 75.0
 spot_angle = 60.0
+
+[node name="BattleUI" parent="." instance=ExtResource("2_xqlu3")]

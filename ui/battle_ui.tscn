@@ -1,7 +1,196 @@
-[gd_scene format=3 uid="uid://dfs44v0ck7qtk"]
+[gd_scene load_steps=3 format=3 uid="uid://dfs44v0ck7qtk"]
+
+[ext_resource type="Script" path="res://ui/BattleMenu.gd" id="1_y3f6q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5ku1"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8, 0.8, 0, 1)
+border_blend = true
 
 [node name="BattleUI" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(256, 384)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="BattleMenu" type="Control" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+script = ExtResource("1_y3f6q")
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu"]
+layout_mode = 2
+offset_right = 208.0
+tabs_visible = false
+
+[node name="MainPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="Attack" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Attack"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Attack/MarginContainer"]
+layout_mode = 2
+text = "Attack"
+
+[node name="Items" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Items"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Items/MarginContainer"]
+layout_mode = 2
+text = "Items"
+
+[node name="Mons" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Mons"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Mons/MarginContainer"]
+layout_mode = 2
+text = "Mons"
+
+[node name="Run" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Run"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Run/MarginContainer"]
+layout_mode = 2
+text = "Run"
+
+[node name="AttackPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="Placeholder" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage/Placeholder"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage/Placeholder/MarginContainer"]
+layout_mode = 2
+text = "Placeholder"
+
+[node name="ItemsPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="Placeholder" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/ItemsPage"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/ItemsPage/Placeholder"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/ItemsPage/Placeholder/MarginContainer"]
+layout_mode = 2
+text = "Placeholder"
+
+[node name="MonsPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="Placeholder" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MonsPage"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MonsPage/Placeholder"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MonsPage/Placeholder/MarginContainer"]
+layout_mode = 2
+text = "Placeholder"
+
+[node name="RunPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="Run" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage/Run"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage/Run/MarginContainer"]
+layout_mode = 2
+text = "Run Away"
+
+[node name="Cancel" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage/Cancel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage/Cancel/MarginContainer"]
+layout_mode = 2
+text = "Cancel
+"
+
+[node name="CurrentOptionHover" type="Panel" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu"]
+custom_minimum_size = Vector2(208, 64)
+layout_mode = 0
+offset_right = 208.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w5ku1")
+
+[node name="MenuSound" type="AudioStreamPlayer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu"]
