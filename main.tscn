@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_d5wbg"]
 [ext_resource type="PackedScene" uid="uid://bcgy5544ts3y" path="res://level/overworld.tscn" id="2_vsss7"]
-[ext_resource type="PackedScene" uid="uid://botdayj5qtmm5" path="res://character/character.tscn" id="3_r10pk"]
+[ext_resource type="PackedScene" uid="uid://bywwxlgih6r4b" path="res://character/player.tscn" id="3_tbn7e"]
 
 [sub_resource type="Environment" id="Environment_fecci"]
 
@@ -11,7 +11,7 @@ script = ExtResource("1_d5wbg")
 
 [node name="Overworld" parent="." instance=ExtResource("2_vsss7")]
 
-[node name="Character" parent="." instance=ExtResource("3_r10pk")]
+[node name="Character" parent="Overworld" instance=ExtResource("3_tbn7e")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fecci")

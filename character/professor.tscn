@@ -1,5 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://xqm0e5e7w1sl"]
+[gd_scene load_steps=3 format=3 uid="uid://xqm0e5e7w1sl"]
 
 [ext_resource type="PackedScene" uid="uid://botdayj5qtmm5" path="res://character/character.tscn" id="1_3xdx1"]
+[ext_resource type="PackedScene" uid="uid://c6i1cqt4wra6" path="res://model/wizard_hat.glb" id="2_2ytkl"]
 
-[node name="Character" instance=ExtResource("1_3xdx1")]
+[node name="Professor" instance=ExtResource("1_3xdx1")]
+transform = Transform3D(1.2, 0, 0, 0, 1.5, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="Hat" parent="." index="1"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 1.2563, 0)
+
+[node name="wizard_hat" parent="Hat" index="0" instance=ExtResource("2_2ytkl")]
