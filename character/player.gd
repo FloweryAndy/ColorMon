@@ -2,12 +2,19 @@ extends Character
 
 @export var player_mon: PackedScene
 @export var current_area: Area3D = null
-@export var main: Node = null
+var main: Node = null
+var is_in_battle: bool = false
+@onready var camera: Camera3D = $Camera3D
+
+
+func _ready():
+	main = get_tree().get_root().get_node("Main")
 
 
 func _process(delta: float) -> void:
-	control_movement(delta)
-	move_and_slide()
+	if !is_in_battle:
+		control_movement(delta)
+		move_and_slide()
 
 
 func control_movement(delta: float) -> void:
@@ -33,3 +40,7 @@ func check_tall_grass() -> void:
 		if tall_grass_ticks >= rng:
 			var wild_mon: PackedScene = current_area.find_wild_mon()
 			main.start_battle(player_mon, wild_mon)
+			camera.current = false
+			is_in_battle = true
+			tall_grass_ticks = 0
+			is_in_tall_grass = false

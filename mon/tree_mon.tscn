@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://7rtrifrpjsao"]
+
+[ext_resource type="PackedScene" uid="uid://dtwcrksdqqql3" path="res://mon/color_mon.tscn" id="1_56uxe"]
+[ext_resource type="PackedScene" uid="uid://ct3axu7yragh" path="res://model/treemon.glb" id="2_il3ao"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uua7v"]
+radius = 2.0
+height = 5.0
+
+[node name="TreeMon" instance=ExtResource("1_56uxe")]
+
+[node name="treemon" parent="." index="0" instance=ExtResource("2_il3ao")]
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("CapsuleShape3D_uua7v")
+
+[node name="Type" parent="." index="2"]
+type1 = 2
