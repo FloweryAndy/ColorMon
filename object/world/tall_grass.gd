@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var area: Area3D = $Area3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var rustle_noise: AudioStreamPlayer3D = $RustleNoise
 
 
 func _ready() -> void:
@@ -12,6 +13,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is Character:
 		animation_player.play("rustle")
+		rustle_noise.play()
 		body.tall_grass_ticks += 1
 		body.is_in_tall_grass = true
 		if body.has_method("check_tall_grass"):
