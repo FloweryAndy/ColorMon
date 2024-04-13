@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var area: Area3D = $Area3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var rustle_noise: AudioStreamPlayer3D = $RustleNoise
+@onready var rustle_noise: AudioStreamPlayer = $RustleNoise
 
 
 func _ready() -> void:
