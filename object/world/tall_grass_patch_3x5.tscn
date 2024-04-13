@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://ymybodxab0ew"]
+
+[ext_resource type="PackedScene" uid="uid://b6wdb2yiytt2r" path="res://object/world/tall_grass.tscn" id="1_mb1ay"]
+
+[node name="TallGrassPatch3x5" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+
+[node name="TallGrass" parent="." instance=ExtResource("1_mb1ay")]
+
+[node name="TallGrass2" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="TallGrass3" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="TallGrass4" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="TallGrass5" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="TallGrass6" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="TallGrass7" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="TallGrass8" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+
+[node name="TallGrass9" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
+
+[node name="TallGrass10" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -2)
+
+[node name="TallGrass11" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="TallGrass12" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
+
+[node name="TallGrass13" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="TallGrass14" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -4)
+
+[node name="TallGrass15" parent="." instance=ExtResource("1_mb1ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -4)

@@ -12,6 +12,7 @@ script = ExtResource("1_d5wbg")
 [node name="Overworld" parent="." instance=ExtResource("2_vsss7")]
 
 [node name="Character" parent="Overworld" instance=ExtResource("3_tbn7e")]
+script = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fecci")
