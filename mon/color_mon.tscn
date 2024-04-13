@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://dtwcrksdqqql3"]
+[gd_scene load_steps=2 format=3 uid="uid://dtwcrksdqqql3"]
+
+[ext_resource type="PackedScene" uid="uid://bynw4w6cvddmx" path="res://component/type.tscn" id="1_5rr6r"]
 
 [node name="ColorMon" type="Node3D"]
+
+[node name="Type" parent="." instance=ExtResource("1_5rr6r")]
