@@ -20,3 +20,5 @@ speed = 256
 environment = SubResource("Environment_fecci")
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = &"BGM"
