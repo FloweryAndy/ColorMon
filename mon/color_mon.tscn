@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtwcrksdqqql3"]
+[gd_scene load_steps=3 format=3 uid="uid://dtwcrksdqqql3"]
 
 [ext_resource type="PackedScene" uid="uid://bynw4w6cvddmx" path="res://component/type.tscn" id="1_5rr6r"]
+[ext_resource type="Script" path="res://mon/color_mon.gd" id="1_yrwmc"]
 
 [node name="ColorMon" type="Node3D"]
+script = ExtResource("1_yrwmc")
 
 [node name="Type" parent="." instance=ExtResource("1_5rr6r")]

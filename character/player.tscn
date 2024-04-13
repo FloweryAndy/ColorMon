@@ -9,12 +9,10 @@
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.8, 0)
 script = ExtResource("2_bo7hf")
 
-[node name="witch_hat" parent="Hat" index="0" instance=ExtResource("2_re0bc")]
+[node name="witch_hat" parent="CharacterMesh/Hat" index="0" instance=ExtResource("2_re0bc")]
 
-[node name="wizard_hat" parent="Hat" index="1" instance=ExtResource("3_nlb5g")]
+[node name="wizard_hat" parent="CharacterMesh/Hat" index="1" instance=ExtResource("3_nlb5g")]
 visible = false
 
-[node name="Camera3D" parent="." index="3"]
+[node name="Camera3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 8, 8)
-
-[editable path="character"]

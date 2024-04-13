@@ -10,10 +10,13 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is CharacterBody3D:
+	if body is Character:
 		animation_player.play("rustle")
+		area.tall_grass_ticks += 1
+		if area.has_method("check_tall_grass"):
+			area.check_tall_grass()
 
 
 func _on_body_exited(body: Node3D) -> void:
-	if body is CharacterBody3D:
+	if body is Character:
 		pass
