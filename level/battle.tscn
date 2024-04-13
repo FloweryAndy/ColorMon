@@ -68,4 +68,5 @@ spot_angle = 60.0
 
 [node name="BattleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_c5pst")
+volume_db = -4.0
 autoplay = true
