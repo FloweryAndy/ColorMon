@@ -4,9 +4,51 @@
 
 [node name="Overworld" type="Node3D"]
 
-[node name="TallGrasses" type="Node3D" parent="."]
+[node name="TallGrassPatch" type="Node3D" parent="."]
 
-[node name="TallGrass" parent="TallGrasses" instance=ExtResource("1_pgdlq")]
+[node name="TallGrass" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+
+[node name="TallGrass2" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="TallGrass3" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="TallGrass4" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="TallGrass5" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="TallGrass6" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="TallGrass7" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="TallGrass8" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+
+[node name="TallGrass9" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
+
+[node name="TallGrass10" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -2)
+
+[node name="TallGrass11" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="TallGrass12" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
+
+[node name="TallGrass13" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="TallGrass14" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -4)
+
+[node name="TallGrass15" parent="TallGrassPatch" instance=ExtResource("1_pgdlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -4)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.965926, 0.12941, -0.224144, 0, 0.866025, 0.5, 0.258819, -0.482963, 0.836516, 0, 0, 0)
