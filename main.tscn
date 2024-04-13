@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://b1sj3jjxfyqd7"]
+[gd_scene load_steps=5 format=3 uid="uid://b1sj3jjxfyqd7"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_d5wbg"]
+[ext_resource type="PackedScene" uid="uid://bcgy5544ts3y" path="res://level/overworld.tscn" id="2_vsss7"]
+[ext_resource type="PackedScene" uid="uid://botdayj5qtmm5" path="res://character/character.tscn" id="3_r10pk"]
+
+[sub_resource type="Environment" id="Environment_fecci"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_d5wbg")
+
+[node name="Overworld" parent="." instance=ExtResource("2_vsss7")]
+
+[node name="Character" parent="." instance=ExtResource("3_r10pk")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fecci")
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
