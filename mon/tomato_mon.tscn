@@ -8,7 +8,7 @@ radius = 1.0
 
 [node name="TomatoMon" instance=ExtResource("1_fkpt7")]
 
-[node name="tomato" parent="." index="0" instance=ExtResource("2_dvv7f")]
+[node name="tomato" parent="Mesh" index="0" instance=ExtResource("2_dvv7f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CollisionShape3D" parent="." index="1"]

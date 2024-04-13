@@ -9,7 +9,7 @@ height = 5.0
 
 [node name="TreeMon" instance=ExtResource("1_56uxe")]
 
-[node name="treemon" parent="." index="0" instance=ExtResource("2_il3ao")]
+[node name="treemon" parent="Mesh" index="0" instance=ExtResource("2_il3ao")]
 
 [node name="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)

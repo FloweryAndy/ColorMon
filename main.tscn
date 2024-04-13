@@ -14,6 +14,7 @@ script = ExtResource("1_d5wbg")
 
 [node name="Player" parent="Overworld" instance=ExtResource("3_tbn7e")]
 player_mon = ExtResource("4_7sxnd")
+speed = 256
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fecci")

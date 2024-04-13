@@ -1,14 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtwcrksdqqql3"]
+[gd_scene load_steps=7 format=3 uid="uid://dtwcrksdqqql3"]
 
 [ext_resource type="PackedScene" uid="uid://bynw4w6cvddmx" path="res://component/type.tscn" id="1_5rr6r"]
 [ext_resource type="Script" path="res://mon/color_mon.gd" id="1_yrwmc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qm3cm"]
 
+[sub_resource type="Animation" id="Animation_ce3q0"]
+resource_name = "bounce"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.375, 0.75, 1.125, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jm4fc"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mlvmg"]
+_data = {
+"RESET": SubResource("Animation_jm4fc"),
+"bounce": SubResource("Animation_ce3q0")
+}
+
 [node name="ColorMon" type="CharacterBody3D"]
 script = ExtResource("1_yrwmc")
+
+[node name="Mesh" type="Node3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_qm3cm")
 
 [node name="Type" parent="." instance=ExtResource("1_5rr6r")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mlvmg")
+}
