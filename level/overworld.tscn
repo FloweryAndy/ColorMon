@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://bcgy5544ts3y"]
+[gd_scene load_steps=22 format=3 uid="uid://bcgy5544ts3y"]
 
 [ext_resource type="PackedScene" uid="uid://ymybodxab0ew" path="res://object/world/tall_grass_patch_3x5.tscn" id="1_7vwbm"]
 [ext_resource type="PackedScene" uid="uid://cv2v327t857wv" path="res://model/overworld.glb" id="1_jpt67"]
+[ext_resource type="Script" path="res://level/CaveEntrance.gd" id="2_41pwk"]
 [ext_resource type="PackedScene" uid="uid://c58cm2f1rbl8c" path="res://object/world/area.tscn" id="3_3vkv5"]
 [ext_resource type="Shader" path="res://object/world/cave_entrance.gdshader" id="3_p1iqx"]
 [ext_resource type="PackedScene" uid="uid://dkk5ubkv0nsby" path="res://mon/cheese_mon.tscn" id="4_6ngm5"]
@@ -37,16 +38,16 @@ size = Vector3(40, 5, 24)
 
 [node name="Overworld" type="Node3D"]
 
-[node name="overworld2" parent="." instance=ExtResource("1_jpt67")]
+[node name="overworld" parent="." instance=ExtResource("1_jpt67")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="overworld2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="overworld"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="overworld2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="overworld/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_iat3x")
 
 [node name="CaveEntrance" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2.5, -54)
+script = ExtResource("2_41pwk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CaveEntrance"]
 mesh = SubResource("BoxMesh_g42n8")
