@@ -1,0 +1,410 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnr4qslf74go3"]
+
+[ext_resource type="PackedScene" uid="uid://b6wdb2yiytt2r" path="res://object/world/tall_grass.tscn" id="1_nv03e"]
+
+[node name="TallGrassPatch9x15_1" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -15)
+
+[node name="TallGrass" parent="." instance=ExtResource("1_nv03e")]
+
+[node name="TallGrass2" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="TallGrass3" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="TallGrass4" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="TallGrass5" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="TallGrass6" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="TallGrass7" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="TallGrass8" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+
+[node name="TallGrass9" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
+
+[node name="TallGrass10" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -2)
+
+[node name="TallGrass11" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="TallGrass12" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
+
+[node name="TallGrass13" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="TallGrass14" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -4)
+
+[node name="TallGrass15" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -4)
+
+[node name="TallGrass16" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+
+[node name="TallGrass17" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 7)
+
+[node name="TallGrass18" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 7)
+
+[node name="TallGrass19" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 7)
+
+[node name="TallGrass20" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 7)
+
+[node name="TallGrass21" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="TallGrass22" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
+
+[node name="TallGrass23" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 5)
+
+[node name="TallGrass24" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 5)
+
+[node name="TallGrass25" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 5)
+
+[node name="TallGrass26" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="TallGrass27" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="TallGrass28" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
+
+[node name="TallGrass29" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 3)
+
+[node name="TallGrass30" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 3)
+
+[node name="TallGrass31" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 7)
+
+[node name="TallGrass32" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 7)
+
+[node name="TallGrass33" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 7)
+
+[node name="TallGrass34" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7)
+
+[node name="TallGrass35" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7)
+
+[node name="TallGrass36" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 5)
+
+[node name="TallGrass37" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 5)
+
+[node name="TallGrass38" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+
+[node name="TallGrass39" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
+
+[node name="TallGrass40" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
+
+[node name="TallGrass41" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 3)
+
+[node name="TallGrass42" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3)
+
+[node name="TallGrass43" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="TallGrass44" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="TallGrass45" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="TallGrass46" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="TallGrass47" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="TallGrass48" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="TallGrass49" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="TallGrass50" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="TallGrass51" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -2)
+
+[node name="TallGrass52" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -2)
+
+[node name="TallGrass53" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
+
+[node name="TallGrass54" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
+
+[node name="TallGrass55" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="TallGrass56" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -4)
+
+[node name="TallGrass57" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -4)
+
+[node name="TallGrass58" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4)
+
+[node name="TallGrass59" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="TallGrass60" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
+
+[node name="TallGrass61" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -7)
+
+[node name="TallGrass62" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -7)
+
+[node name="TallGrass63" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -7)
+
+[node name="TallGrass64" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -7)
+
+[node name="TallGrass65" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -7)
+
+[node name="TallGrass66" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -9)
+
+[node name="TallGrass67" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -9)
+
+[node name="TallGrass68" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -9)
+
+[node name="TallGrass69" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -9)
+
+[node name="TallGrass70" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -9)
+
+[node name="TallGrass71" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -11)
+
+[node name="TallGrass72" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -11)
+
+[node name="TallGrass73" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -11)
+
+[node name="TallGrass74" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -11)
+
+[node name="TallGrass75" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -11)
+
+[node name="TallGrass76" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="TallGrass77" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -7)
+
+[node name="TallGrass78" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -7)
+
+[node name="TallGrass79" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -7)
+
+[node name="TallGrass80" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -7)
+
+[node name="TallGrass81" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+
+[node name="TallGrass82" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -9)
+
+[node name="TallGrass83" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -9)
+
+[node name="TallGrass84" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -9)
+
+[node name="TallGrass85" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -9)
+
+[node name="TallGrass86" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11)
+
+[node name="TallGrass87" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -11)
+
+[node name="TallGrass88" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -11)
+
+[node name="TallGrass89" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -11)
+
+[node name="TallGrass90" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -11)
+
+[node name="TallGrass91" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -7)
+
+[node name="TallGrass92" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -7)
+
+[node name="TallGrass93" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -7)
+
+[node name="TallGrass94" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -7)
+
+[node name="TallGrass95" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -7)
+
+[node name="TallGrass96" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -9)
+
+[node name="TallGrass97" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -9)
+
+[node name="TallGrass98" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -9)
+
+[node name="TallGrass99" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -9)
+
+[node name="TallGrass100" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -9)
+
+[node name="TallGrass101" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -11)
+
+[node name="TallGrass102" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -11)
+
+[node name="TallGrass103" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -11)
+
+[node name="TallGrass104" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -11)
+
+[node name="TallGrass105" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -11)
+
+[node name="TallGrass106" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="TallGrass107" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="TallGrass108" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+
+[node name="TallGrass109" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+
+[node name="TallGrass110" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="TallGrass111" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -2)
+
+[node name="TallGrass112" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -2)
+
+[node name="TallGrass113" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -2)
+
+[node name="TallGrass114" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -2)
+
+[node name="TallGrass115" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -2)
+
+[node name="TallGrass116" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -4)
+
+[node name="TallGrass117" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -4)
+
+[node name="TallGrass118" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -4)
+
+[node name="TallGrass119" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -4)
+
+[node name="TallGrass120" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -4)
+
+[node name="TallGrass121" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 7)
+
+[node name="TallGrass122" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 7)
+
+[node name="TallGrass123" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 7)
+
+[node name="TallGrass124" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 7)
+
+[node name="TallGrass125" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 7)
+
+[node name="TallGrass126" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 5)
+
+[node name="TallGrass127" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 5)
+
+[node name="TallGrass128" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 5)
+
+[node name="TallGrass129" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 5)
+
+[node name="TallGrass130" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 5)
+
+[node name="TallGrass131" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 3)
+
+[node name="TallGrass132" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 3)
+
+[node name="TallGrass133" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 3)
+
+[node name="TallGrass134" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 3)
+
+[node name="TallGrass135" parent="." instance=ExtResource("1_nv03e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 3)
