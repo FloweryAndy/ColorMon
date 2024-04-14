@@ -4,17 +4,26 @@ extends Character
 @export var current_area: Area3D = null
 var main: Node = null
 var is_in_battle: bool = false
+var is_interacting: bool = false
+var can_interact: bool = true
+var interactable: Node = null
 @onready var camera: Camera3D = $Camera3D
+@onready var interact_zone: Area3D = $InteractZone
 
 
 func _ready():
 	main = get_tree().get_root().get_node("Main")
+	interact_zone.body_entered.connect(_on_interact_zone_entered)
+	interact_zone.body_exited.connect(_on_interact_zone_exited)
+	camera.current = true
 
 
 func _process(delta: float) -> void:
 	if !is_in_battle:
-		control_movement(delta)
-		move_and_slide()
+		control_interaction(delta)
+		if !is_interacting:
+			control_movement(delta)
+			move_and_slide()
 
 
 func control_movement(delta: float) -> void:
@@ -24,6 +33,12 @@ func control_movement(delta: float) -> void:
 		move(Vector2(move_x, move_z), delta)
 	else:
 		velocity = Vector3.ZERO
+
+
+func control_interaction(_delta: float) -> void:
+	if interactable:
+		if Input.is_action_just_pressed("confirm") and can_interact:
+			is_interacting = await interactable.interact()
 
 
 func move(direction: Vector2, delta: float) -> void:
@@ -50,3 +65,11 @@ func check_tall_grass() -> void:
 func _on_battle_finished() -> void:
 	is_in_battle = false
 	camera.current = true
+
+
+func _on_interact_zone_entered(body: Node3D) -> void:
+	interactable = body.get_node("Interactable")
+
+
+func _on_interact_zone_exited(body: Node3D) -> void:
+	interactable = null

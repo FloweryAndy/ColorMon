@@ -1,14 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1sj3jjxfyqd7"]
+[gd_scene load_steps=15 format=3 uid="uid://b1sj3jjxfyqd7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_d5wbg"]
 [ext_resource type="PackedScene" uid="uid://bcgy5544ts3y" path="res://level/overworld.tscn" id="2_vsss7"]
 [ext_resource type="PackedScene" uid="uid://bywwxlgih6r4b" path="res://character/player.tscn" id="3_tbn7e"]
 [ext_resource type="PackedScene" uid="uid://vec8654ksik8" path="res://mon/tomato_mon.tscn" id="4_7sxnd"]
+[ext_resource type="PackedScene" uid="uid://ckvig7w7st160" path="res://component/interactable.tscn" id="4_wbtn6"]
 [ext_resource type="AudioStream" uid="uid://b718r0r7e5cux" path="res://bgm/overworld.ogg" id="5_2d4ps"]
 [ext_resource type="PackedScene" uid="uid://xqm0e5e7w1sl" path="res://character/professor.tscn" id="5_gy5og"]
+[ext_resource type="Resource" uid="uid://c4d6v5jfmfb1q" path="res://dialogue/professor_dialogue1.dialogue" id="5_vns0h"]
 [ext_resource type="PackedScene" uid="uid://dvb0g87h3sivu" path="res://character/rival.tscn" id="6_e816d"]
 [ext_resource type="PackedScene" uid="uid://cmya000hgwvyx" path="res://ui/escape_menu.tscn" id="6_in2nh"]
+[ext_resource type="Resource" uid="uid://d1dibitq1mp5k" path="res://dialogue/rival_dialogue1.dialogue" id="7_14hbj"]
 [ext_resource type="AudioStream" uid="uid://c5fgcp2iutmiu" path="res://sfx/confirm.ogg" id="7_jdy25"]
+[ext_resource type="PackedScene" uid="uid://ctwfu1hvoy7gq" path="res://ui/dialogue_box.tscn" id="10_g3cro"]
 
 [sub_resource type="Environment" id="Environment_fecci"]
 
@@ -23,9 +27,19 @@ process_mode = 1
 
 [node name="Professor" parent="Level" instance=ExtResource("5_gy5og")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -25, 2.25, 19)
+collision_layer = 5
+collision_mask = 5
+
+[node name="Interactable" parent="Level/Professor" instance=ExtResource("4_wbtn6")]
+dialogue = ExtResource("5_vns0h")
 
 [node name="Rival" parent="Level" instance=ExtResource("6_e816d")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24, 2.25, 19)
+collision_layer = 5
+collision_mask = 5
+
+[node name="Interactable" parent="Level/Rival" instance=ExtResource("4_wbtn6")]
+dialogue = ExtResource("7_14hbj")
 
 [node name="Player" parent="Level" instance=ExtResource("3_tbn7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 36)
@@ -33,6 +47,9 @@ player_mon = ExtResource("4_7sxnd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
 environment = SubResource("Environment_fecci")
+
+[node name="DialogueBox" parent="." instance=ExtResource("10_g3cro")]
+visible = false
 
 [node name="EscapeMenu" parent="." instance=ExtResource("6_in2nh")]
 visible = false
