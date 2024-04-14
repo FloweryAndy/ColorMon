@@ -24,15 +24,17 @@ func _input(_event):
 			escape_menu.show()
 
 
-func start_battle(player_mon: PackedScene, wild_mon: PackedScene):
-	var battle = battle_scene.instantiate()
+func start_battle(player_mon: PackedScene, wild_mon: PackedScene) -> Node3D:
+	var battle: Node3D = battle_scene.instantiate()
 	battle.player_mon = player_mon
 	battle.wild_mon = wild_mon
 	add_child(battle)
+	move_child(battle, 1)
 	battle.global_position = Vector3(0, -10, 0)
 	battle.battle_finished.connect(end_battle)
 	call_deferred("disable_process")
 	bgm_player.stop()
+	return battle
 
 
 func enable_process():

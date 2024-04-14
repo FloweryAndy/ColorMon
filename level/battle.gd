@@ -43,5 +43,5 @@ func _on_send_mon(index: int):
 
 
 func _on_send_run():
-	await get_tree().process_frame
+	battle_finished.emit()
 	queue_free()

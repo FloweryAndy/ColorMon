@@ -22,6 +22,7 @@ func _on_body_entered(body: Node3D) -> void:
 
 func _on_body_exited(body: Node3D) -> void:
 	if body is Character:
-		body.tall_grass_ticks -= 1
+		if body.tall_grass_ticks > 0:
+			body.tall_grass_ticks -= 1
 		if body.tall_grass_ticks <= 0:
 			body.is_in_tall_grass = false
