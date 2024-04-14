@@ -1,18 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1sj3jjxfyqd7"]
+[gd_scene load_steps=9 format=3 uid="uid://b1sj3jjxfyqd7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_d5wbg"]
 [ext_resource type="PackedScene" uid="uid://bcgy5544ts3y" path="res://level/overworld.tscn" id="2_vsss7"]
 [ext_resource type="PackedScene" uid="uid://bywwxlgih6r4b" path="res://character/player.tscn" id="3_tbn7e"]
 [ext_resource type="PackedScene" uid="uid://vec8654ksik8" path="res://mon/tomato_mon.tscn" id="4_7sxnd"]
-[ext_resource type="AudioStream" uid="uid://cr84r8nveeu3k" path="res://bgm/overworld.wav" id="5_xb6a8"]
+[ext_resource type="AudioStream" uid="uid://b718r0r7e5cux" path="res://bgm/overworld.ogg" id="5_2d4ps"]
 [ext_resource type="PackedScene" uid="uid://cmya000hgwvyx" path="res://ui/escape_menu.tscn" id="6_in2nh"]
+[ext_resource type="AudioStream" uid="uid://c5fgcp2iutmiu" path="res://sfx/confirm.ogg" id="7_jdy25"]
 
 [sub_resource type="Environment" id="Environment_fecci"]
 
 [node name="Main" type="Node"]
+process_mode = 3
 script = ExtResource("1_d5wbg")
 
 [node name="Level" type="Node3D" parent="."]
+process_mode = 1
 
 [node name="Overworld" parent="Level" instance=ExtResource("2_vsss7")]
 
@@ -23,11 +26,16 @@ speed = 256
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
 environment = SubResource("Environment_fecci")
 
+[node name="EscapeMenu" parent="." instance=ExtResource("6_in2nh")]
+visible = false
+
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_xb6a8")
+stream = ExtResource("5_2d4ps")
 volume_db = -4.0
 autoplay = true
 bus = &"BGM"
 
-[node name="EscapeMenu" parent="." instance=ExtResource("6_in2nh")]
-visible = false
+[node name="MenuSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_jdy25")
+volume_db = -10.0
+bus = &"SFX"

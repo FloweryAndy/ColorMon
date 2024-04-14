@@ -45,7 +45,6 @@ func _process(_delta):
 				menu_sound.play()
 				tab_container.current_tab = current_option_index + 1
 				current_option_index = 0
-
 		BattleMenmove_downages.ATTACK_PAGE:
 			if Input.is_action_just_pressed("move_up"):
 				menu_sound.play()
@@ -132,7 +131,6 @@ func _process(_delta):
 					send_run.emit()
 				else:
 					tab_container.current_tab = BattleMenmove_downages.MAIN_PAGE
-				hide()
 			if Input.is_action_just_pressed("cancel"):
 				menu_sound.play()
 				tab_container.current_tab = BattleMenmove_downages.MAIN_PAGE

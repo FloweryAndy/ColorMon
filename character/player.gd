@@ -38,9 +38,9 @@ func check_tall_grass() -> void:
 	if is_in_tall_grass and tall_grass_ticks > 0:
 		var rng = randi_range(2, 10)
 		if tall_grass_ticks >= rng:
+			tall_grass_ticks = 0
 			var wild_mon: PackedScene = current_area.find_wild_mon()
+			is_in_tall_grass = false
+			is_in_battle = true
 			main.start_battle(player_mon, wild_mon)
 			camera.current = false
-			is_in_battle = true
-			tall_grass_ticks = 0
-			is_in_tall_grass = false

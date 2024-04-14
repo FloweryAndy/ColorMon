@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://level/battle.gd" id="1_f23gr"]
 [ext_resource type="PackedScene" uid="uid://dfs44v0ck7qtk" path="res://ui/battle_ui.tscn" id="2_xqlu3"]
-[ext_resource type="AudioStream" uid="uid://d1wi7thk0c2fo" path="res://bgm/battle.wav" id="3_c5pst"]
+[ext_resource type="AudioStream" uid="uid://e1aludwn4lxg" path="res://bgm/battle.ogg" id="3_mqawb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfqqe"]
 albedo_color = Color(1, 1, 0.72549, 1)
@@ -67,6 +67,6 @@ spot_angle = 60.0
 [node name="BattleUI" parent="." instance=ExtResource("2_xqlu3")]
 
 [node name="BattleMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_c5pst")
+stream = ExtResource("3_mqawb")
 volume_db = -4.0
 autoplay = true
