@@ -1,5 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvb0g87h3sivu"]
+[gd_scene load_steps=5 format=3 uid="uid://dvb0g87h3sivu"]
 
 [ext_resource type="PackedScene" uid="uid://botdayj5qtmm5" path="res://character/character.tscn" id="1_xx313"]
+[ext_resource type="PackedScene" uid="uid://bv55nw0e1qs41" path="res://model/rival.glb" id="2_a5lqq"]
+[ext_resource type="PackedScene" uid="uid://qal4b07v4j1n" path="res://model/witch_hat.glb" id="3_4pcek"]
+[ext_resource type="PackedScene" uid="uid://c6i1cqt4wra6" path="res://model/wizard_hat.glb" id="4_ycpry"]
 
 [node name="Rival" instance=ExtResource("1_xx313")]
+
+[node name="rival" parent="CharacterMesh" index="0" instance=ExtResource("2_a5lqq")]
+
+[node name="witch_hat" parent="CharacterMesh" index="1" instance=ExtResource("3_4pcek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09218, 0)
+visible = false
+
+[node name="wizard_hat" parent="CharacterMesh" index="2" instance=ExtResource("4_ycpry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09218, 0)

@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://xqm0e5e7w1sl"]
+[gd_scene load_steps=5 format=3 uid="uid://xqm0e5e7w1sl"]
 
 [ext_resource type="PackedScene" uid="uid://botdayj5qtmm5" path="res://character/character.tscn" id="1_3xdx1"]
 [ext_resource type="PackedScene" uid="uid://c6i1cqt4wra6" path="res://model/wizard_hat.glb" id="2_2ytkl"]
+[ext_resource type="PackedScene" uid="uid://c4ut0wsw3sq1w" path="res://model/professor.glb" id="2_u5os7"]
+[ext_resource type="PackedScene" uid="uid://qal4b07v4j1n" path="res://model/witch_hat.glb" id="3_gjjio"]
 
 [node name="Professor" instance=ExtResource("1_3xdx1")]
-transform = Transform3D(1.2, 0, 0, 0, 1.5, 0, 0, 0, 1.2, 0, 0, 0)
 
-[node name="Hat" parent="." index="1"]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 1.2563, 0)
+[node name="professor" parent="CharacterMesh" index="0" instance=ExtResource("2_u5os7")]
 
-[node name="wizard_hat" parent="Hat" index="0" instance=ExtResource("2_2ytkl")]
+[node name="witch_hat" parent="CharacterMesh" index="1" instance=ExtResource("3_gjjio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.249, 0)
+visible = false
+
+[node name="wizard_hat" parent="CharacterMesh" index="2" instance=ExtResource("2_2ytkl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.249, 0)
