@@ -20,6 +20,7 @@ process_mode = 1
 [node name="Overworld" parent="Level" instance=ExtResource("2_vsss7")]
 
 [node name="Player" parent="Level/Overworld" instance=ExtResource("3_tbn7e")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.8, 35.9809)
 player_mon = ExtResource("4_7sxnd")
 speed = 256
 
