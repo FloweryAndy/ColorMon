@@ -37,20 +37,20 @@ func start_battle(player_mon: PackedScene, wild_mon: PackedScene) -> Node3D:
 	return battle
 
 
-func enable_process():
-	get_tree().paused = false
-
-
-func disable_process():
-	get_tree().paused = true
-
-
 func end_battle():
 	enable_process()
 	await get_tree().process_frame
 	var player = get_tree().get_first_node_in_group("player")
 	player.camera.current = true
 	bgm_player.play()
+
+
+func enable_process():
+	get_tree().paused = false
+
+
+func disable_process():
+	get_tree().paused = true
 
 
 func _on_resume_pressed():
