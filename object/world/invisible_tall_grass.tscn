@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3oa44fa185p0"]
+
+[ext_resource type="Script" path="res://object/world/tall_grass.gd" id="1_4vuk1"]
+[ext_resource type="AudioStream" uid="uid://d2uqh12tm5eba" path="res://sfx/grass_rustle.ogg" id="3_p656k"]
+
+[sub_resource type="Animation" id="Animation_t8k3v"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_3e6iu"]
+resource_name = "rustle"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_62een"]
+_data = {
+"RESET": SubResource("Animation_t8k3v"),
+"rustle": SubResource("Animation_3e6iu")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eqvty"]
+size = Vector3(2, 2, 2)
+
+[node name="InvisibleTallGrass" type="Node3D"]
+script = ExtResource("1_4vuk1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_62een")
+}
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_eqvty")
+
+[node name="RustleNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_p656k")
+volume_db = -40.0
+bus = &"SFX"
