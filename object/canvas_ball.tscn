@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://0arqmyjw84jl"]
+[gd_scene load_steps=7 format=3 uid="uid://0arqmyjw84jl"]
 
 [ext_resource type="Shader" path="res://object/canvas_ball.gdshader" id="1_55gck"]
 [ext_resource type="Texture2D" uid="uid://dnla5p5mli020" path="res://model/canvas_ball_Sphere Base Color.png" id="1_xfllk"]
+[ext_resource type="PackedScene" uid="uid://c5btq4eg80b3f" path="res://model/easel.glb" id="3_6qbia"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5ds6d"]
 resource_name = "Material.001"
@@ -52,3 +53,6 @@ shadow_mesh = SubResource("ArrayMesh_6cphy")
 transform = Transform3D(0.209177, 0, 0, 0, 0.209177, 0, 0, 0, 0.209177, 0, 0, 0)
 mesh = SubResource("ArrayMesh_7fwc5")
 skeleton = NodePath("")
+
+[node name="easel" parent="." instance=ExtResource("3_6qbia")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
