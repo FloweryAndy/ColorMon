@@ -21,15 +21,15 @@ process_mode = 1
 
 [node name="Overworld" parent="Level" instance=ExtResource("2_vsss7")]
 
-[node name="Player" parent="Level/Overworld" instance=ExtResource("3_tbn7e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 35)
-player_mon = ExtResource("4_7sxnd")
-
-[node name="Professor" parent="Level/Overworld" instance=ExtResource("5_gy5og")]
+[node name="Professor" parent="Level" instance=ExtResource("5_gy5og")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -25, 2.25, 19)
 
-[node name="Rival" parent="Level/Overworld" instance=ExtResource("6_e816d")]
+[node name="Rival" parent="Level" instance=ExtResource("6_e816d")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24, 2.25, 19)
+
+[node name="Player" parent="Level" instance=ExtResource("3_tbn7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 36)
+player_mon = ExtResource("4_7sxnd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
 environment = SubResource("Environment_fecci")
