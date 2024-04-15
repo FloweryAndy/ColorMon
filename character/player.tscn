@@ -81,12 +81,14 @@ _data = {
 }
 
 [node name="Player" groups=["player"] instance=ExtResource("1_is16n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("2_bo7hf")
 player_mon = null
 
 [node name="player" type="Node3D" parent="CharacterMesh" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="Armature" type="Node3D" parent="CharacterMesh/player" index="0"]
 
@@ -139,21 +141,24 @@ mesh = SubResource("ArrayMesh_revus")
 skin = SubResource("Skin_rts41")
 
 [node name="witch_hat" parent="CharacterMesh" index="1" instance=ExtResource("2_re0bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31441, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25, 0)
 
 [node name="wizard_hat" parent="CharacterMesh" index="2" instance=ExtResource("3_nlb5g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31441, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25, 0)
 visible = false
 
 [node name="InteractZone" type="Area3D" parent="CharacterMesh" index="3"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterMesh/InteractZone" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.66144)
 shape = SubResource("SphereShape3D_a0481")
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 16, 12)

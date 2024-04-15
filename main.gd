@@ -32,13 +32,17 @@ func _input(_event):
 			escape_menu.show()
 
 
-func start_battle(player_mon: PackedScene, wild_mon: PackedScene) -> Node3D:
+func start_battle(
+	player_mon: PackedScene, wild_mon: PackedScene, player: Character, trainer: Character = null
+) -> Node3D:
 	var battle: Node3D = battle_scene.instantiate()
 	battle.player_mon = player_mon
 	battle.wild_mon = wild_mon
+	battle.player = player
+	if trainer:
+		battle.trainer = trainer
 	add_child(battle)
 	move_child(battle, 1)
-	battle.global_position = Vector3(0, -10, 0)
 	battle.battle_finished.connect(end_battle)
 	call_deferred("disable_process")
 	overworld_bgm_player.stop()

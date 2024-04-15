@@ -8,10 +8,11 @@
 [node name="Professor" instance=ExtResource("1_3xdx1")]
 
 [node name="professor" parent="CharacterMesh" index="0" instance=ExtResource("2_u5os7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="witch_hat" parent="CharacterMesh" index="1" instance=ExtResource("3_gjjio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.249, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.299, 0)
 visible = false
 
 [node name="wizard_hat" parent="CharacterMesh" index="2" instance=ExtResource("2_2ytkl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.249, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.299, 0)

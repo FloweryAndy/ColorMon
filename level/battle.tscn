@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bquhw7qf243gb"]
+[gd_scene load_steps=10 format=3 uid="uid://bquhw7qf243gb"]
 
 [ext_resource type="Script" path="res://level/battle.gd" id="1_f23gr"]
 [ext_resource type="PackedScene" uid="uid://dfs44v0ck7qtk" path="res://ui/battle_ui.tscn" id="2_xqlu3"]
 [ext_resource type="AudioStream" uid="uid://e1aludwn4lxg" path="res://bgm/battle.ogg" id="3_mqawb"]
+[ext_resource type="PackedScene" uid="uid://ckvig7w7st160" path="res://component/interactable.tscn" id="4_ylpyw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfqqe"]
 albedo_color = Color(1, 1, 0.72549, 1)
@@ -15,16 +16,35 @@ albedo_color = Color(0.270588, 1, 0.223529, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lhlai"]
 material = SubResource("StandardMaterial3D_icmgy")
-size = Vector3(20, 1, 20)
+size = Vector3(25, 1, 25)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d0ds5"]
 points = PackedVector3Array(10.1587, 0.611111, 10.1548, -10.1587, -0.65873, -10.1548, -10.1587, -0.65873, 10.1548, -10.1587, 0.611111, -10.1548, 10.1587, -0.65873, -10.1548, -10.1587, 0.611111, 10.1548, 10.1587, -0.65873, 10.1548, 10.1587, 0.611111, -10.1548)
 
 [node name="Battle" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 script = ExtResource("1_f23gr")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573577, -0.707107, -0.40558, 0.579228, 4, 7, 4)
+fov = 60.0
 
 [node name="Backdrop" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.23634e-06, 28.2843, -28.2843, -40, -1.74846e-06, 0, -1.23634e-06, 28.2843, 28.2843, -12, 0, -12)
+mesh = SubResource("PlaneMesh_tvuss")
+
+[node name="Backdrop2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.23634e-06, -28.2843, -28.2843, -40, -1.74846e-06, 0, -1.23634e-06, 28.2843, -28.2843, 12, 0, -12)
+mesh = SubResource("PlaneMesh_tvuss")
+
+[node name="Backdrop3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.23634e-06, -28.2843, 28.2843, -40, -1.74846e-06, 6.77626e-21, 1.23634e-06, -28.2843, -28.2843, 12, 0, 12)
+mesh = SubResource("PlaneMesh_tvuss")
+
+[node name="Backdrop4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.23634e-06, 28.2843, 28.2843, -40, -1.74846e-06, 0, 1.23634e-06, -28.2843, 28.2843, -12, 0, 12)
 mesh = SubResource("PlaneMesh_tvuss")
 
 [node name="Floor" type="StaticBody3D" parent="."]
@@ -38,15 +58,17 @@ shape = SubResource("ConvexPolygonShape3D_d0ds5")
 
 [node name="BattleController" type="Node" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573576, -0.707107, -0.40558, 0.579228, 4, 7, 4)
-fov = 60.0
-
 [node name="PlayerMonMarker" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+
+[node name="PlayerMarker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 9)
 
 [node name="WildMonMarker" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
+
+[node name="TrainerMarket" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -9)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 10, 3)
@@ -70,3 +92,5 @@ spot_angle = 60.0
 stream = ExtResource("3_mqawb")
 volume_db = -4.0
 autoplay = true
+
+[node name="Interactable" parent="." instance=ExtResource("4_ylpyw")]

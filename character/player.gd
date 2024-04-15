@@ -60,19 +60,35 @@ func check_tall_grass() -> void:
 			do_wild_battle()
 
 
-func do_planned_battle(planned_mon: PackedScene) -> void:
-	var battle = main.start_battle(player_mon, planned_mon)
+func do_planned_battle(planned_mon: PackedScene, trainer) -> void:
+	var marker = Marker3D.new()
+	get_parent().add_child(marker)
+	marker.global_position = global_position
+	var battle = main.start_battle(player_mon, planned_mon, self, trainer)
 	battle.battle_finished.connect(_on_battle_finished)
 	is_in_battle = true
 	camera.current = false
+	await battle.battle_finished
+	is_in_battle = false
+	camera.current = true
+	global_position = marker.global_position
 
 
 func do_wild_battle() -> void:
+	var marker = Marker3D.new()
+	get_parent().add_child(marker)
+	marker.global_position = global_position
 	var wild_mon: PackedScene = current_area.find_wild_mon()
-	var battle = main.start_battle(player_mon, wild_mon)
+	var battle = main.start_battle(player_mon, wild_mon, self)
 	battle.battle_finished.connect(_on_battle_finished)
 	is_in_battle = true
 	camera.current = false
+	animation_player.stop()
+	await battle.battle_finished
+	is_in_battle = false
+	camera.current = true
+	global_position = marker.global_position
+	look_at(global_position + Vector3.FORWARD, Vector3.UP)
 
 
 func _on_battle_finished() -> void:

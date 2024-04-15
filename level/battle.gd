@@ -2,10 +2,15 @@ extends Node3D
 
 signal battle_finished
 var player_mon: PackedScene
+var player: Character
 var wild_mon: PackedScene
+var trainer: Character
 @onready var player_mon_marker: Marker3D = $PlayerMonMarker
+@onready var player_marker: Marker3D = $PlayerMarker
 @onready var wild_mon_marker: Marker3D = $WildMonMarker
+@onready var trainer_marker: Marker3D = $TrainerMarker
 @onready var battle_menu: Control = $"BattleUI/%BattleMenu"
+@onready var camera_pivot: Node3D = $CameraPivot
 
 
 func _ready():
@@ -22,12 +27,22 @@ func _ready():
 		wild_mon_instance.global_position = wild_mon_marker.global_position
 		player_mon_instance.look_at(wild_mon_instance.global_position, Vector3.UP)
 		wild_mon_instance.look_at(player_mon_instance.global_position, Vector3.UP)
+		player.global_position = player_marker.global_position
+		player.character_mesh.look_at(player_mon_instance.global_position, Vector3.UP)
+		if trainer:
+			trainer.global_position = trainer_marker.global_position
+			trainer.look_at(wild_mon_instance.global_position, Vector3.UP)
+			print("trainer ", trainer.name, " is looking at ", wild_mon_instance.name)
 		print(
 			"starting battle with player mon ",
 			player_mon_instance.name,
 			" and wild mon ",
 			wild_mon_instance.name
 		)
+
+
+func _process(delta):
+	camera_pivot.rotate_y(delta * 0.5)
 
 
 func _on_send_attack(index: int):

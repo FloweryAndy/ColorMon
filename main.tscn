@@ -27,7 +27,7 @@ script = ExtResource("1_d5wbg")
 process_mode = 1
 
 [node name="Professor" parent="Level" instance=ExtResource("5_gy5og")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -25, 2.25, 19)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -25, 0, 19)
 collision_layer = 5
 collision_mask = 5
 
@@ -35,7 +35,7 @@ collision_mask = 5
 dialogue = ExtResource("5_vns0h")
 
 [node name="Rival" parent="Level" instance=ExtResource("6_e816d")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24, 2.25, 19)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24, 0, 19)
 collision_layer = 5
 collision_mask = 5
 
@@ -43,7 +43,8 @@ collision_mask = 5
 dialogue = ExtResource("7_14hbj")
 
 [node name="Player" parent="Level" instance=ExtResource("3_tbn7e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 36)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
+rotation_speed = null
 player_mon = ExtResource("4_7sxnd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
