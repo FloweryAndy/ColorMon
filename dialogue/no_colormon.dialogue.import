@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://806b1p3puwca"
+path="res://.godot/imported/no_colormon.dialogue-b3e7e0a26cffd3e8dc4f6e9d083ace38.tres"
+
+[deps]
+
+source_file="res://dialogue/no_colormon.dialogue"
+dest_files=["res://.godot/imported/no_colormon.dialogue-b3e7e0a26cffd3e8dc4f6e9d083ace38.tres"]
+
+[params]
+
+defaults=true

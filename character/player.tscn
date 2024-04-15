@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bywwxlgih6r4b"]
+[gd_scene load_steps=14 format=3 uid="uid://bywwxlgih6r4b"]
 
 [ext_resource type="PackedScene" uid="uid://botdayj5qtmm5" path="res://character/character.tscn" id="1_is16n"]
 [ext_resource type="Script" path="res://character/player.gd" id="2_bo7hf"]
 [ext_resource type="PackedScene" uid="uid://qal4b07v4j1n" path="res://model/witch_hat.glb" id="2_re0bc"]
 [ext_resource type="Texture2D" uid="uid://ddxxmmtphnd4n" path="res://model/player_Player Base Color.png" id="3_ji017"]
 [ext_resource type="PackedScene" uid="uid://c6i1cqt4wra6" path="res://model/wizard_hat.glb" id="3_nlb5g"]
+[ext_resource type="PackedScene" uid="uid://ckvig7w7st160" path="res://component/interactable.tscn" id="6_3te6o"]
+[ext_resource type="Resource" uid="uid://806b1p3puwca" path="res://dialogue/no_colormon.dialogue" id="7_rar1v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vsnty"]
 resource_name = "Material"
@@ -84,8 +86,6 @@ _data = {
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("2_bo7hf")
-player_mon = null
-rotation_speed = null
 
 [node name="player" type="Node3D" parent="CharacterMesh" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
@@ -166,3 +166,6 @@ root_node = NodePath("../CharacterMesh/player")
 libraries = {
 "": SubResource("AnimationLibrary_kh300")
 }
+
+[node name="Interactable" parent="." index="4" instance=ExtResource("6_3te6o")]
+dialogue = ExtResource("7_rar1v")

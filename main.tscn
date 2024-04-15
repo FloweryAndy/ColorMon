@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://b1sj3jjxfyqd7"]
+[gd_scene load_steps=26 format=3 uid="uid://b1sj3jjxfyqd7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_d5wbg"]
 [ext_resource type="PackedScene" uid="uid://bywwxlgih6r4b" path="res://character/player.tscn" id="3_tbn7e"]
-[ext_resource type="PackedScene" uid="uid://vec8654ksik8" path="res://mon/tomato_mon.tscn" id="4_7sxnd"]
 [ext_resource type="PackedScene" uid="uid://ckvig7w7st160" path="res://component/interactable.tscn" id="4_wbtn6"]
 [ext_resource type="AudioStream" uid="uid://b718r0r7e5cux" path="res://bgm/overworld.ogg" id="5_2d4ps"]
 [ext_resource type="PackedScene" uid="uid://xqm0e5e7w1sl" path="res://character/professor.tscn" id="5_gy5og"]
@@ -83,7 +82,7 @@ dialogue = ExtResource("7_14hbj")
 
 [node name="Player" parent="Level" instance=ExtResource("3_tbn7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
-player_mon = ExtResource("4_7sxnd")
+rotation_speed = 31.4159
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
 environment = SubResource("Environment_fecci")

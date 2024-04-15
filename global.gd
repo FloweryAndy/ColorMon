@@ -10,11 +10,13 @@ var starter_mon: String = "Default_Mon"
 var is_that_correct: bool = false
 var game_start: Control
 var starter_selector: Control
+var player: Character
 
 
 func _ready():
 	game_start = get_tree().get_root().get_node("Main/GameStart")
 	starter_selector = get_tree().get_root().get_node("Main/StarterSelector")
+	player = get_tree().get_first_node_in_group("player")
 
 
 func choose_gender():
@@ -37,6 +39,7 @@ func choose_starter():
 	starter_selector.show()
 	starter_mon = await starter_selector.select_starter()
 	starter_selector.hide()
+	player.set_mon(starter_mon)
 
 
 func choose_is_that_correct():

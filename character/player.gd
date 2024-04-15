@@ -1,7 +1,7 @@
 extends Character
 
-@export var player_mon: PackedScene
 @export var current_area: Area3D = null
+var player_mon: PackedScene = null
 var main: Node = null
 var is_in_battle: bool = false
 var is_interacting: bool = false
@@ -53,11 +53,19 @@ func move(direction: Vector2, delta: float) -> void:
 
 
 func check_tall_grass() -> void:
-	if tall_grass_ticks > 0:
-		var rng = randi_range(10, 40)
-		if tall_grass_ticks >= rng:
-			tall_grass_ticks = 0
-			do_wild_battle()
+	if player_mon:
+		if tall_grass_ticks > 0:
+			var rng = randi_range(10, 40)
+			if tall_grass_ticks >= rng:
+				tall_grass_ticks = 0
+				do_wild_battle()
+	else:
+		global_transform.origin += Vector3.BACK
+		if can_interact:
+			can_interact = false
+			interactable = $Interactable
+			is_interacting = await interactable.interact()
+			can_interact = true
 
 
 func do_planned_battle(planned_mon: PackedScene, trainer) -> void:
@@ -89,6 +97,16 @@ func do_wild_battle() -> void:
 	camera.current = true
 	global_position = marker.global_position
 	look_at(global_position + Vector3.FORWARD, Vector3.UP)
+
+
+func set_mon(new_mon: String):
+	match new_mon:
+		"Tomatomon":
+			player_mon = load("res://mon/tomato_mon.tscn")
+		"Fishmon":
+			player_mon = load("res://mon/fish_mon.tscn")
+		"Treemon":
+			player_mon = load("res://mon/tree_mon.tscn")
 
 
 func _on_battle_finished() -> void:
