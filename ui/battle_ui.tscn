@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfs44v0ck7qtk"]
+[gd_scene load_steps=7 format=3 uid="uid://dfs44v0ck7qtk"]
 
+[ext_resource type="Texture2D" uid="uid://da85027x5sgxg" path="res://art/battle_box.png" id="1_65pq1"]
 [ext_resource type="Script" path="res://ui/BattleMenu.gd" id="1_y3f6q"]
 [ext_resource type="AudioStream" uid="uid://c5fgcp2iutmiu" path="res://sfx/confirm.ogg" id="2_gncwl"]
+[ext_resource type="Texture2D" uid="uid://7khhaokokndy" path="res://art/option_box.png" id="3_lufpj"]
+[ext_resource type="Texture2D" uid="uid://bwyi6rqpe5bga" path="res://art/hover_box.png" id="3_mocsf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4axm0"]
 
 [node name="BattleUI" type="Control"]
 layout_mode = 3
@@ -28,6 +33,13 @@ theme_override_constants/margin_bottom = 16
 
 [node name="PanelContainer" type="NinePatchRect" parent="MarginContainer"]
 layout_mode = 2
+texture = ExtResource("1_65pq1")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -46,15 +58,21 @@ script = ExtResource("1_y3f6q")
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu"]
 layout_mode = 2
 offset_right = 208.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4axm0")
 tabs_visible = false
 
 [node name="MainPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
 layout_mode = 2
-theme_override_constants/separation = 26
+theme_override_constants/separation = 27
 
 [node name="Attack" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+texture = ExtResource("3_lufpj")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Attack"]
 layout_mode = 2
@@ -72,6 +90,11 @@ text = "Attack"
 [node name="Items" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+texture = ExtResource("3_lufpj")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Items"]
 layout_mode = 2
@@ -89,6 +112,11 @@ text = "Items"
 [node name="Mons" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+texture = ExtResource("3_lufpj")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Mons"]
 layout_mode = 2
@@ -106,6 +134,11 @@ text = "Palette"
 [node name="Run" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+texture = ExtResource("3_lufpj")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Run"]
 layout_mode = 2
@@ -128,6 +161,7 @@ theme_override_constants/separation = 26
 [node name="Placeholder" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+texture = ExtResource("3_lufpj")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage/Placeholder"]
 layout_mode = 2
@@ -148,6 +182,7 @@ theme_override_constants/separation = 26
 [node name="Placeholder" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/ItemsPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+texture = ExtResource("3_lufpj")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/ItemsPage/Placeholder"]
 layout_mode = 2
@@ -168,6 +203,7 @@ theme_override_constants/separation = 26
 [node name="Placeholder" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MonsPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+texture = ExtResource("3_lufpj")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MonsPage/Placeholder"]
 layout_mode = 2
@@ -188,6 +224,7 @@ theme_override_constants/separation = 26
 [node name="Run" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+texture = ExtResource("3_lufpj")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage/Run"]
 layout_mode = 2
@@ -203,6 +240,7 @@ text = "Run Away"
 [node name="Cancel" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+texture = ExtResource("3_lufpj")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage/Cancel"]
 layout_mode = 2
@@ -221,6 +259,13 @@ custom_minimum_size = Vector2(208, 64)
 layout_mode = 0
 offset_right = 208.0
 offset_bottom = 64.0
+texture = ExtResource("3_mocsf")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [node name="MenuSound" type="AudioStreamPlayer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu"]
 stream = ExtResource("2_gncwl")
