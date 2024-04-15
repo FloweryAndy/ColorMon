@@ -10,6 +10,7 @@ radius = 2.0
 height = 5.0
 
 [node name="CheeseMon" instance=ExtResource("1_ouxlu")]
+color_mon_name = "Cheesemon"
 speed = 3
 attacks = Array[Resource]([ExtResource("2_ql7mj"), ExtResource("3_x5yjq")])
 

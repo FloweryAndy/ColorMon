@@ -1,0 +1,6 @@
+~ this_is_a_node_title
+
+Professor: You caught a {{Global.wild_mon_name}}!
+Professor: {{Global.wild_mon_name}} is now your new main ColorMon!
+
+=> END

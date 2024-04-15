@@ -7,9 +7,10 @@ var player_mon: PackedScene
 var player: Character
 var wild_mon: PackedScene
 var trainer: Character
-var player_mon_instance: CharacterBody3D
-var wild_mon_instance: CharacterBody3D
+var player_mon_instance: ColorMon
+var wild_mon_instance: ColorMon
 var is_interacting: bool = false
+var canvas_ball_scene: PackedScene = load("res://object/canvas_ball.tscn")
 @onready var player_mon_marker: Marker3D = $PlayerMonMarker
 @onready var player_marker: Marker3D = $PlayerMarker
 @onready var wild_mon_marker: Marker3D = $WildMonMarker
@@ -19,6 +20,7 @@ var is_interacting: bool = false
 @onready var wild_mon_health_bar: ProgressBar = $"BattleUI/%WildMonHealthBar"
 @onready var player_mon_health_bar: ProgressBar = $"BattleUI/%PlayerMonHealthBar"
 @onready var interactable: Node = $Interactable
+@onready var camera: Camera3D = $CameraPivot/Camera3D
 
 
 func _ready():
@@ -37,15 +39,17 @@ func _ready():
 		wild_mon_instance.look_at(player_mon_instance.global_position, Vector3.UP)
 		player.global_position = player_marker.global_position
 		player.character_mesh.look_at(player_mon_instance.global_position, Vector3.UP)
+		Global.player_mon_name = player_mon_instance.color_mon_name
+		Global.wild_mon_name = wild_mon_instance.color_mon_name
 		if trainer:
 			trainer.global_position = trainer_marker.global_position
 			trainer.look_at(wild_mon_instance.global_position, Vector3.UP)
-			print("trainer ", trainer.name, " is looking at ", wild_mon_instance.name)
+			print("trainer ", trainer.name, " is looking at ", wild_mon_instance.color_mon_name)
 		print(
 			"starting battle with player mon ",
-			player_mon_instance.name,
+			player_mon_instance.color_mon_name,
 			" and wild mon ",
-			wild_mon_instance.name
+			wild_mon_instance.color_mon_name
 		)
 		battle_menu.attacks = player_mon_instance.attacks
 		battle_menu.show()
@@ -127,7 +131,41 @@ func _on_send_attack(index: int):
 
 
 func _on_send_item(index: int):
-	pass
+	if index == 0:
+		var canvas_ball_instance = canvas_ball_scene.instantiate()
+		add_child(canvas_ball_instance)
+		canvas_ball_instance.global_position = player_marker.global_position + Vector3.UP * 3
+		await canvas_ball_instance.animation_player.animation_finished
+		wild_mon_instance.hide()
+		if randi() % 2 == 0:
+			interactable.dialogue = load("res://dialogue/caught_wild_mon.dialogue")
+			is_interacting = await interactable.interact()
+			await interactable.dialogue_finished
+			camera.current = true
+			player.player_mon = wild_mon
+			player_won.emit()
+			print("player won")
+			battle_finished.emit()
+			queue_free()
+		else:
+			interactable.dialogue = load("res://dialogue/failed_to_catch.dialogue")
+			is_interacting = await interactable.interact()
+			await interactable.dialogue_finished
+			camera.current = true
+			canvas_ball_instance.queue_free()
+			wild_mon_instance.show()
+			await wild_mon_attack()
+			await get_tree().create_timer(0.5).timeout
+			if player_mon_instance.health <= 0:
+				interactable.dialogue = load("res://dialogue/player_lost.dialogue")
+				is_interacting = await interactable.interact()
+				await interactable.dialogue_finished
+				player_lost.emit()
+				print("player lost")
+				battle_finished.emit()
+				queue_free()
+	battle_menu.tab_container.current_tab = 0
+	battle_menu.show()
 
 
 func _on_send_mon(index: int):

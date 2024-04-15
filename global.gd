@@ -11,6 +11,8 @@ var is_that_correct: bool = false
 var game_start: Control
 var starter_selector: Control
 var player: Character
+var player_mon_name: String
+var wild_mon_name: String
 
 
 func _ready():

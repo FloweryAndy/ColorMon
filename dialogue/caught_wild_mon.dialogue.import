@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://h804urkiwm85"
+path="res://.godot/imported/caught_wild_mon.dialogue-6d9425d6ae316e76e80700527fc21c68.tres"
+
+[deps]
+
+source_file="res://dialogue/caught_wild_mon.dialogue"
+dest_files=["res://.godot/imported/caught_wild_mon.dialogue-6d9425d6ae316e76e80700527fc21c68.tres"]
+
+[params]
+
+defaults=true

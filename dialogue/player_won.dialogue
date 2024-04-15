@@ -1,5 +1,5 @@
 ~ this_is_a_node_title
 
-Professor: You won!
+Professor: Your {{Global.player_mon_name}} won!
 
 => END

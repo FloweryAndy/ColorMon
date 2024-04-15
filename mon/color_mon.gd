@@ -1,6 +1,7 @@
 extends CharacterBody3D
 class_name ColorMon
 
+@export var color_mon_name: String
 @export var speed: int
 @export var attacks: Array[Resource]
 @export var max_health: int

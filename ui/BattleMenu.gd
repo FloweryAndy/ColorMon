@@ -122,8 +122,9 @@ func _process(_delta):
 					current_option = mons_page.get_child(current_option_index)
 				if Input.is_action_just_pressed("confirm"):
 					menu_sound.play()
-					send_mon.emit(current_option_index)
-					hide()
+					#send_mon.emit(current_option_index)
+					#hide()
+					#current_option_index = 0
 				if Input.is_action_just_pressed("cancel"):
 					menu_sound.play()
 					tab_container.current_tab = BattleMenuPages.MAIN_PAGE
