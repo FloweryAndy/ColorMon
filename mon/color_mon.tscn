@@ -1,9 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtwcrksdqqql3"]
+[gd_scene load_steps=9 format=3 uid="uid://dtwcrksdqqql3"]
 
 [ext_resource type="PackedScene" uid="uid://bynw4w6cvddmx" path="res://component/type.tscn" id="1_5rr6r"]
 [ext_resource type="Script" path="res://mon/color_mon.gd" id="1_yrwmc"]
+[ext_resource type="Resource" uid="uid://c5pr3mp4uc1ra" path="res://component/attacks/attack.tres" id="2_ome5k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qm3cm"]
+
+[sub_resource type="Animation" id="Animation_jm4fc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ce3q0"]
 resource_name = "bounce"
@@ -21,17 +37,32 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_jm4fc"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_hin6g"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.785398, 0, 0), Vector3(-0.523599, 0, 0), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mlvmg"]
 _data = {
 "RESET": SubResource("Animation_jm4fc"),
+"attack": SubResource("Animation_hin6g"),
 "bounce": SubResource("Animation_ce3q0")
 }
 
 [node name="ColorMon" type="CharacterBody3D"]
 script = ExtResource("1_yrwmc")
+attacks = Array[Resource]([ExtResource("2_ome5k")])
+max_health = 10
 
 [node name="Mesh" type="Node3D" parent="."]
 

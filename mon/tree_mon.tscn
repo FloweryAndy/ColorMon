@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://7rtrifrpjsao"]
+[gd_scene load_steps=6 format=3 uid="uid://7rtrifrpjsao"]
 
 [ext_resource type="PackedScene" uid="uid://dtwcrksdqqql3" path="res://mon/color_mon.tscn" id="1_56uxe"]
 [ext_resource type="PackedScene" uid="uid://ct3axu7yragh" path="res://model/treemon.glb" id="2_il3ao"]
+[ext_resource type="Resource" uid="uid://c8urpypmwt8gl" path="res://component/attacks/kick.tres" id="2_s3ql8"]
+[ext_resource type="Resource" uid="uid://ot6fhh17wbbs" path="res://component/attacks/scratch.tres" id="3_5f4sn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uua7v"]
 radius = 2.0
 height = 5.0
 
 [node name="TreeMon" instance=ExtResource("1_56uxe")]
+attacks = Array[Resource]([ExtResource("2_s3ql8"), ExtResource("3_5f4sn")])
 
 [node name="treemon" parent="Mesh" index="0" instance=ExtResource("2_il3ao")]
 

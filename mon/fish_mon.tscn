@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkkmxux5uempy"]
+[gd_scene load_steps=6 format=3 uid="uid://dkkmxux5uempy"]
 
 [ext_resource type="PackedScene" uid="uid://dtwcrksdqqql3" path="res://mon/color_mon.tscn" id="1_0abkj"]
 [ext_resource type="PackedScene" uid="uid://rx5garw2fxif" path="res://model/fishmon.glb" id="2_2owrd"]
+[ext_resource type="Resource" uid="uid://d3o85wbst4i7l" path="res://component/attacks/punch.tres" id="2_ca6wf"]
+[ext_resource type="Resource" uid="uid://ot6fhh17wbbs" path="res://component/attacks/scratch.tres" id="3_ly2di"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uua7v"]
 radius = 1.03873
 height = 5.332
 
 [node name="FishMon" instance=ExtResource("1_0abkj")]
+attacks = Array[Resource]([ExtResource("2_ca6wf"), ExtResource("3_ly2di")])
 
 [node name="fishmon" parent="Mesh" index="0" instance=ExtResource("2_2owrd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

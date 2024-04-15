@@ -1,12 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfs44v0ck7qtk"]
+[gd_scene load_steps=10 format=3 uid="uid://dfs44v0ck7qtk"]
 
 [ext_resource type="Texture2D" uid="uid://da85027x5sgxg" path="res://art/battle_box.png" id="1_65pq1"]
 [ext_resource type="Script" path="res://ui/BattleMenu.gd" id="1_y3f6q"]
 [ext_resource type="AudioStream" uid="uid://c5fgcp2iutmiu" path="res://sfx/confirm.ogg" id="2_gncwl"]
 [ext_resource type="Texture2D" uid="uid://7khhaokokndy" path="res://art/option_box.png" id="3_lufpj"]
 [ext_resource type="Texture2D" uid="uid://bwyi6rqpe5bga" path="res://art/hover_box.png" id="3_mocsf"]
+[ext_resource type="Script" path="res://ui/HealthBar.gd" id="6_4ela4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4axm0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6bkp"]
+bg_color = Color(0.6, 0.6, 0.411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmti8"]
+bg_color = Color(0.6, 0, 0, 1)
 
 [node name="BattleUI" type="Control"]
 layout_mode = 3
@@ -24,6 +31,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -384.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/margin_left = 16
@@ -178,33 +187,6 @@ visible = false
 layout_mode = 2
 theme_override_constants/separation = 27
 
-[node name="Attack_1" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage"]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-texture = ExtResource("3_lufpj")
-patch_margin_left = 32
-patch_margin_top = 32
-patch_margin_right = 32
-patch_margin_bottom = 32
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage/Attack_1"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -32.0
-offset_right = 208.0
-offset_bottom = 32.0
-grow_vertical = 2
-theme_override_constants/margin_left = 16
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage/Attack_1/MarginContainer"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 18
-text = "Scratch"
-
 [node name="ItemsPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
 visible = false
 layout_mode = 2
@@ -347,3 +329,53 @@ axis_stretch_vertical = 2
 stream = ExtResource("2_gncwl")
 volume_db = -10.0
 bus = &"SFX"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(512, 128)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="WildMonHealthBar" type="ProgressBar" parent="MarginContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_j6bkp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pmti8")
+min_value = 100.0
+value = 100.0
+show_percentage = false
+script = ExtResource("6_4ela4")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(512, 128)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+offset_right = 512.0
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PlayerMonHealthBar" type="ProgressBar" parent="MarginContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_j6bkp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pmti8")
+min_value = 100.0
+value = 100.0
+show_percentage = false
+script = ExtResource("6_4ela4")
