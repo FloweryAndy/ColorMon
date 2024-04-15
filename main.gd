@@ -67,6 +67,7 @@ func _on_resume_pressed():
 
 
 func _on_game_start():
+	game_start_bgm_player.stop()
 	overworld_bgm_player.play()
 	game_started = true
 	enable_process()
