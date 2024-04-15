@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://xcsgue6u3m40"]
+
+[ext_resource type="Script" path="res://object/world/cave_entrance.gd" id="1_rerlw"]
+[ext_resource type="Shader" path="res://object/world/cave_entrance.gdshader" id="2_403mg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1gknw"]
+render_priority = 0
+shader = ExtResource("2_403mg")
+
+[sub_resource type="BoxMesh" id="BoxMesh_g42n8"]
+material = SubResource("ShaderMaterial_1gknw")
+size = Vector3(3, 3.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l73ve"]
+size = Vector3(4, 4, 4)
+
+[node name="CaveEntrance" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2.5, -54)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_rerlw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_g42n8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_l73ve")
