@@ -1,6 +1,23 @@
 ~ this_is_a_node_title
 
-Professor: [[Hi|Hello|Howdy]], this is some dialogue.
-Professor: For more information see the online documentation.
+Professor: Ah [Player name] you made it here safely.
+Professor: Are you ready to start your new adventure?
+Professor: My bones don't move like they use to so I need someone like you to help me with my project.
+Professor: What is my project you ask?
+Professor: Why, spreading color throughout the Eventide Forest!
+Professor: It's a hefty job but I know you can do it.
+Professor: Now pick out your colormon partner.
+Professor: I've picked out these three colormon to choose from. Tomatomon, Cheesemon, and Fishmon!
+
+[If player chooses Tomatomon]
+Professor: Ah the red colormon Tomatomon! They will make a fine partner!
+
+[If the player chooses Cheesemon]
+Professor: Ah the yellow colormon Cheesemon! They will make a fine partner!
+
+[If the player chooses Fishmon]
+Professor: Ah the blue colormon Fishmon! They will make a fine partner!
+
+UI: You want to choose [Colormon Name] as your partner? [Yes/No]
 
 => END
