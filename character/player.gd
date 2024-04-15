@@ -51,7 +51,7 @@ func move(direction: Vector2, delta: float) -> void:
 
 func check_tall_grass() -> void:
 	if tall_grass_ticks > 0:
-		var rng = randi_range(4, 10)
+		var rng = randi_range(5, 20)
 		if tall_grass_ticks >= rng:
 			tall_grass_ticks = 0
 			do_wild_battle()
