@@ -8,7 +8,7 @@ var is_interacting: bool = false
 var can_interact: bool = true
 var interactable: Node = null
 @onready var camera: Camera3D = $Camera3D
-@onready var interact_zone: Area3D = $InteractZone
+@onready var interact_zone: Area3D = %InteractZone
 
 
 func _ready():
@@ -50,16 +50,26 @@ func move(direction: Vector2, delta: float) -> void:
 
 
 func check_tall_grass() -> void:
-	if is_in_tall_grass and tall_grass_ticks > 0:
-		is_in_tall_grass = false
-		var rng = randi_range(2, 10)
+	if tall_grass_ticks > 0:
+		var rng = randi_range(4, 10)
 		if tall_grass_ticks >= rng:
 			tall_grass_ticks = 0
-			var wild_mon: PackedScene = current_area.find_wild_mon()
-			var battle = main.start_battle(player_mon, wild_mon)
-			battle.battle_finished.connect(_on_battle_finished)
-			is_in_battle = true
-			camera.current = false
+			do_wild_battle()
+
+
+func do_planned_battle(planned_mon: PackedScene) -> void:
+	var battle = main.start_battle(player_mon, planned_mon)
+	battle.battle_finished.connect(_on_battle_finished)
+	is_in_battle = true
+	camera.current = false
+
+
+func do_wild_battle() -> void:
+	var wild_mon: PackedScene = current_area.find_wild_mon()
+	var battle = main.start_battle(player_mon, wild_mon)
+	battle.battle_finished.connect(_on_battle_finished)
+	is_in_battle = true
+	camera.current = false
 
 
 func _on_battle_finished() -> void:

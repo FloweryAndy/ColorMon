@@ -15,14 +15,9 @@ func _on_body_entered(body: Node3D) -> void:
 		animation_player.play("rustle")
 		rustle_noise.play()
 		body.tall_grass_ticks += 1
-		body.is_in_tall_grass = true
 		if body.has_method("check_tall_grass"):
 			body.check_tall_grass()
 
 
 func _on_body_exited(body: Node3D) -> void:
-	if body is Character:
-		if body.tall_grass_ticks > 0:
-			body.tall_grass_ticks -= 1
-		if body.tall_grass_ticks <= 0:
-			body.is_in_tall_grass = false
+	pass
