@@ -75,9 +75,14 @@ patch_margin_right = 32
 patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Attack"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
 offset_right = 208.0
-offset_bottom = 64.0
+offset_bottom = 32.0
+grow_vertical = 2
 theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Attack/MarginContainer"]
@@ -97,9 +102,14 @@ patch_margin_right = 32
 patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Items"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
 offset_right = 208.0
-offset_bottom = 64.0
+offset_bottom = 32.0
+grow_vertical = 2
 theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Items/MarginContainer"]
@@ -119,9 +129,14 @@ patch_margin_right = 32
 patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Mons"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
 offset_right = 208.0
-offset_bottom = 64.0
+offset_bottom = 32.0
+grow_vertical = 2
 theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Mons/MarginContainer"]
@@ -141,9 +156,14 @@ patch_margin_right = 32
 patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Run"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
 offset_right = 208.0
-offset_bottom = 64.0
+offset_bottom = 32.0
+grow_vertical = 2
 theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Run/MarginContainer"]
@@ -156,40 +176,63 @@ text = "Run"
 [node name="AttackPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
 visible = false
 layout_mode = 2
-theme_override_constants/separation = 26
+theme_override_constants/separation = 27
 
-[node name="Placeholder" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage"]
+[node name="Attack_1" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 texture = ExtResource("3_lufpj")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage/Placeholder"]
-layout_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage/Attack_1"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 208.0
+offset_bottom = 32.0
+grow_vertical = 2
 theme_override_constants/margin_left = 16
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage/Placeholder/MarginContainer"]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage/Attack_1/MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 18
-text = "Placeholder"
+text = "Scratch"
 
 [node name="ItemsPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
 visible = false
 layout_mode = 2
-theme_override_constants/separation = 26
+theme_override_constants/separation = 27
 
 [node name="Placeholder" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/ItemsPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 texture = ExtResource("3_lufpj")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/ItemsPage/Placeholder"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 119.0
+offset_bottom = 13.0
+grow_vertical = 2
 theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/ItemsPage/Placeholder/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 18
@@ -198,15 +241,26 @@ text = "Placeholder"
 [node name="MonsPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
 visible = false
 layout_mode = 2
-theme_override_constants/separation = 26
+theme_override_constants/separation = 27
 
 [node name="Placeholder" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MonsPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 texture = ExtResource("3_lufpj")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MonsPage/Placeholder"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 119.0
+offset_bottom = 13.0
+grow_vertical = 2
 theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MonsPage/Placeholder/MarginContainer"]
@@ -219,15 +273,26 @@ text = "Placeholder"
 [node name="RunPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
 visible = false
 layout_mode = 2
-theme_override_constants/separation = 26
+theme_override_constants/separation = 27
 
 [node name="Run" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 texture = ExtResource("3_lufpj")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage/Run"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 102.0
+offset_bottom = 13.0
+grow_vertical = 2
 theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage/Run/MarginContainer"]
@@ -241,9 +306,20 @@ text = "Run Away"
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 texture = ExtResource("3_lufpj")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage/Cancel"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 74.0
+offset_bottom = 13.0
+grow_vertical = 2
 theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage/Cancel/MarginContainer"]
