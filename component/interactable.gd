@@ -19,7 +19,7 @@ func interact() -> bool:
 		dialogue_box.show()
 		var dialogue_line = await dialogue.get_next_dialogue_line("this_is_a_node_title")
 		dialogue_label.dialogue_line = dialogue_line
-		await dialogue_label.type_out()
+		dialogue_label.type_out()
 		return true
 	elif dialogue and dialogue_box.visible == true:
 		if dialogue_label.is_typing:
@@ -29,7 +29,7 @@ func interact() -> bool:
 			var dialogue_line: DialogueLine = await dialogue.get_next_dialogue_line(next_id)
 			if dialogue_line:
 				dialogue_label.dialogue_line = dialogue_line
-				await dialogue_label.type_out()
+				dialogue_label.type_out()
 			else:
 				dialogue_box.hide()
 				return false
