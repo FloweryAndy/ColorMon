@@ -1,19 +1,22 @@
 ~ this_is_a_node_title
 
-Professor: Ah {{Global.player_name}} you made it here safely.
-Professor: Are you ready to start your new adventure?
-Professor: My bones don't move like they use to so I need someone like you to help me with my project.
-Professor: What is my project you ask?
-Professor: Why, spreading color throughout the Eventide Forest!
-Professor: It's a hefty job but I know you can do it.
-Professor: Now pick out your colormon partner.
-Professor: I've picked out these three colormon to choose from. Tomatomon, Treemon, and Fishmon!
-do Global.choose_starter()
-if Global.starter_mon == "Tomatomon"
-	Professor: Ah the red colormon Tomatomon! They will make a fine partner!
-if Global.starter_mon == "Treemon"
-	Professor: Ah the green colormon Treemon! They will make a fine partner!
-if Global.starter_mon == "Fishmon"
-	Professor: Ah the blue colormon Fishmon! They will make a fine partner!
+if Global.starter_mon == "Default_Mon"
+	Professor: Ah {{Global.player_name}} you made it here safely.
+	Professor: Are you ready to start your new adventure?
+	Professor: My bones don't move like they use to so I need someone like you to help me with my project.
+	Professor: What is my project you ask?
+	Professor: Why, spreading color throughout the Eventide Forest!
+	Professor: It's a hefty job but I know you can do it.
+	Professor: Now pick out your colormon partner.
+	Professor: I've picked out these three colormon to choose from. Tomatomon, Treemon, and Fishmon!
+	do Global.choose_starter()
+	if Global.starter_mon == "Tomatomon"
+		Professor: Ah the red colormon Tomatomon! They will make a fine partner!
+	if Global.starter_mon == "Treemon"
+		Professor: Ah the green colormon Treemon! They will make a fine partner!
+	if Global.starter_mon == "Fishmon"
+		Professor: Ah the blue colormon Fishmon! They will make a fine partner!
+else
+	Professor: Hope the adventure is going well!
 
 => END

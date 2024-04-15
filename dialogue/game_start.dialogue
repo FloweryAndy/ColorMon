@@ -2,9 +2,9 @@
 
 while Global.is_that_correct == false
 	Professor: Hello! Welcome to the Eventide Forest! You can call me the Professor. Now enlighten me. Are you a witch? Or a wizard?
-	do Global.choose_name()
-	Professor: I see...and what is your moniker? 
 	do Global.choose_gender()
+	Professor: I see...and what is your moniker? 
+	do Global.choose_name()
 	Professor: A {{Global.player_gender}} called {{Global.player_name}}. Is that correct?
 	do Global.choose_is_that_correct()
 set Global.is_that_correct = false

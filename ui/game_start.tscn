@@ -1,10 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1xnhwoq5oo2i"]
+[gd_scene load_steps=21 format=3 uid="uid://c1xnhwoq5oo2i"]
 
 [ext_resource type="Script" path="res://ui/game_start.gd" id="1_xox8v"]
 [ext_resource type="Script" path="res://ui/GameStartLabel.gd" id="2_atps5"]
 [ext_resource type="Texture2D" uid="uid://krbs74urw5fd" path="res://art/game_start.png" id="2_gjp2x"]
 [ext_resource type="Texture2D" uid="uid://buulgru0xlt6p" path="res://art/professor_sheet.png" id="4_m8sc6"]
 [ext_resource type="Script" path="res://ui/AnimatedSprite2D.gd" id="5_sqkjj"]
+[ext_resource type="Script" path="res://ui/name_selector.gd" id="6_r44gg"]
+[ext_resource type="Texture2D" uid="uid://7khhaokokndy" path="res://art/option_box.png" id="7_7itdh"]
+[ext_resource type="Texture2D" uid="uid://da85027x5sgxg" path="res://art/battle_box.png" id="8_ft8sb"]
+[ext_resource type="Texture2D" uid="uid://bwyi6rqpe5bga" path="res://art/hover_box.png" id="9_gxyne"]
+[ext_resource type="Script" path="res://ui/rival_name_selector.gd" id="10_i3oj0"]
+[ext_resource type="Script" path="res://ui/gender_selector.gd" id="11_bmfka"]
+[ext_resource type="Script" path="res://ui/is_that_correct_selector.gd" id="12_pgiul"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ku0t"]
 atlas = ExtResource("4_m8sc6")
@@ -27,6 +34,41 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l1kks"]
+texture = ExtResource("8_ft8sb")
+texture_margin_left = 16.0
+texture_margin_top = 8.0
+texture_margin_right = 16.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6xa05"]
+texture = ExtResource("8_ft8sb")
+texture_margin_left = 16.0
+texture_margin_top = 8.0
+texture_margin_right = 16.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j77c2"]
+texture = ExtResource("9_gxyne")
+texture_margin_left = 16.0
+texture_margin_top = 8.0
+texture_margin_right = 16.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7684y"]
+texture = ExtResource("8_ft8sb")
+texture_margin_left = 16.0
+texture_margin_top = 8.0
+texture_margin_right = 16.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i12uj"]
+texture = ExtResource("8_ft8sb")
+texture_margin_left = 16.0
+texture_margin_top = 8.0
+texture_margin_right = 16.0
+texture_margin_bottom = 8.0
 
 [node name="GameStart" type="Control"]
 layout_mode = 3
@@ -79,3 +121,263 @@ scale = Vector2(2.53906, 2.625)
 sprite_frames = SubResource("SpriteFrames_u1ccf")
 autoplay = "default"
 script = ExtResource("5_sqkjj")
+
+[node name="NameSelector" type="Control" parent="."]
+visible = false
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_r44gg")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NameSelector"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_7itdh")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NameSelector/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -33.0
+offset_right = 128.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameBox" type="LineEdit" parent="NameSelector/NinePatchRect/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+placeholder_text = "Your Moniker"
+
+[node name="EnterButton" type="Button" parent="NameSelector/NinePatchRect/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_l1kks")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6xa05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j77c2")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7684y")
+theme_override_styles/focus = SubResource("StyleBoxTexture_i12uj")
+text = "Enter"
+
+[node name="RivalNameSelector" type="Control" parent="."]
+visible = false
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_i3oj0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RivalNameSelector"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_7itdh")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RivalNameSelector/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -33.0
+offset_right = 128.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RivalNameBox" type="LineEdit" parent="RivalNameSelector/NinePatchRect/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+placeholder_text = "Rival Moniker"
+
+[node name="RivalEnterButton" type="Button" parent="RivalNameSelector/NinePatchRect/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_l1kks")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6xa05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j77c2")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7684y")
+theme_override_styles/focus = SubResource("StyleBoxTexture_i12uj")
+text = "Enter"
+
+[node name="IsThatCorrectSelector" type="Control" parent="."]
+visible = false
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_pgiul")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="IsThatCorrectSelector"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_7itdh")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="IsThatCorrectSelector/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -33.0
+offset_right = 128.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="YesButton" type="Button" parent="IsThatCorrectSelector/NinePatchRect/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_l1kks")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6xa05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j77c2")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7684y")
+theme_override_styles/focus = SubResource("StyleBoxTexture_i12uj")
+text = "Yes"
+
+[node name="NoButton" type="Button" parent="IsThatCorrectSelector/NinePatchRect/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_l1kks")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6xa05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j77c2")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7684y")
+theme_override_styles/focus = SubResource("StyleBoxTexture_i12uj")
+text = "No"
+
+[node name="GenderSelector" type="Control" parent="."]
+visible = false
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_bmfka")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GenderSelector"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_7itdh")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GenderSelector/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -33.0
+offset_right = 128.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="WitchButton" type="Button" parent="GenderSelector/NinePatchRect/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_l1kks")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6xa05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j77c2")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7684y")
+theme_override_styles/focus = SubResource("StyleBoxTexture_i12uj")
+text = "Witch"
+
+[node name="WizardButton" type="Button" parent="GenderSelector/NinePatchRect/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_l1kks")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6xa05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j77c2")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7684y")
+theme_override_styles/focus = SubResource("StyleBoxTexture_i12uj")
+text = "Wizard"
