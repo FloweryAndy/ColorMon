@@ -44,7 +44,6 @@ dialogue = ExtResource("7_14hbj")
 
 [node name="Player" parent="Level" instance=ExtResource("3_tbn7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
-rotation_speed = null
 player_mon = ExtResource("4_7sxnd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]

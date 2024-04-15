@@ -1,16 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfs44v0ck7qtk"]
+[gd_scene load_steps=3 format=3 uid="uid://dfs44v0ck7qtk"]
 
 [ext_resource type="Script" path="res://ui/BattleMenu.gd" id="1_y3f6q"]
 [ext_resource type="AudioStream" uid="uid://c5fgcp2iutmiu" path="res://sfx/confirm.ogg" id="2_gncwl"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5ku1"]
-draw_center = false
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.8, 0.8, 0, 1)
-border_blend = true
 
 [node name="BattleUI" type="Control"]
 layout_mode = 3
@@ -35,11 +26,13 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="NinePatchRect" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
+offset_right = 224.0
+offset_bottom = 352.0
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -59,52 +52,72 @@ tabs_visible = false
 layout_mode = 2
 theme_override_constants/separation = 26
 
-[node name="Attack" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
+[node name="Attack" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Attack"]
 layout_mode = 2
+offset_right = 208.0
+offset_bottom = 64.0
 theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Attack/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Attack"
 
-[node name="Items" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
+[node name="Items" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Items"]
 layout_mode = 2
+offset_right = 208.0
+offset_bottom = 64.0
 theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Items/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Items"
 
-[node name="Mons" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
+[node name="Mons" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Mons"]
 layout_mode = 2
+offset_right = 208.0
+offset_bottom = 64.0
 theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Mons/MarginContainer"]
 layout_mode = 2
-text = "Mons"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Palette"
 
-[node name="Run" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
+[node name="Run" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Run"]
 layout_mode = 2
+offset_right = 208.0
+offset_bottom = 64.0
 theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MainPage/Run/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Run"
 
 [node name="AttackPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
@@ -112,7 +125,7 @@ visible = false
 layout_mode = 2
 theme_override_constants/separation = 26
 
-[node name="Placeholder" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage"]
+[node name="Placeholder" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
@@ -122,6 +135,9 @@ theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/AttackPage/Placeholder/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Placeholder"
 
 [node name="ItemsPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
@@ -129,7 +145,7 @@ visible = false
 layout_mode = 2
 theme_override_constants/separation = 26
 
-[node name="Placeholder" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/ItemsPage"]
+[node name="Placeholder" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/ItemsPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
@@ -139,6 +155,9 @@ theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/ItemsPage/Placeholder/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Placeholder"
 
 [node name="MonsPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
@@ -146,7 +165,7 @@ visible = false
 layout_mode = 2
 theme_override_constants/separation = 26
 
-[node name="Placeholder" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MonsPage"]
+[node name="Placeholder" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MonsPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
@@ -156,6 +175,9 @@ theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/MonsPage/Placeholder/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Placeholder"
 
 [node name="RunPage" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer"]
@@ -163,7 +185,7 @@ visible = false
 layout_mode = 2
 theme_override_constants/separation = 26
 
-[node name="Run" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage"]
+[node name="Run" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
@@ -173,9 +195,12 @@ theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage/Run/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Run Away"
 
-[node name="Cancel" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage"]
+[node name="Cancel" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
@@ -185,15 +210,17 @@ theme_override_constants/margin_left = 16
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu/TabContainer/RunPage/Cancel/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Cancel
 "
 
-[node name="CurrentOptionHover" type="Panel" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu"]
+[node name="CurrentOptionHover" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu"]
 custom_minimum_size = Vector2(208, 64)
 layout_mode = 0
 offset_right = 208.0
 offset_bottom = 64.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_w5ku1")
 
 [node name="MenuSound" type="AudioStreamPlayer" parent="MarginContainer/PanelContainer/MarginContainer/BattleMenu"]
 stream = ExtResource("2_gncwl")

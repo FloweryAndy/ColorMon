@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctwfu1hvoy7gq"]
+[gd_scene load_steps=4 format=3 uid="uid://ctwfu1hvoy7gq"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="1_ocjdc"]
 [ext_resource type="Script" path="res://ui/dialogue_box.gd" id="1_q6qse"]
+[ext_resource type="Texture2D" uid="uid://cx7cwsaxgnue" path="res://art/dialogue_box.png" id="2_jknx0"]
 
 [node name="DialogueBox" type="Control"]
 layout_mode = 3
@@ -30,25 +31,34 @@ theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
 layout_mode = 2
+texture = ExtResource("2_jknx0")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(720, 128)
 layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
-[node name="DialogueLabel" type="RichTextLabel" parent="MarginContainer/PanelContainer/MarginContainer"]
+[node name="DialogueLabel" type="RichTextLabel" parent="MarginContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 24
-theme_override_font_sizes/bold_font_size = 24
-theme_override_font_sizes/italics_font_size = 24
-theme_override_font_sizes/bold_italics_font_size = 24
-theme_override_font_sizes/mono_font_size = 24
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
 script = ExtResource("1_ocjdc")
 skip_action = &"a"
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
