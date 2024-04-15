@@ -17,4 +17,3 @@ mono_crash.*.json
 bin/
 *.blend1
 *.blend2
-*.import

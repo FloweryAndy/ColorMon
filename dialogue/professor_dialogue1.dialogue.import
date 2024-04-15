@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c4d6v5jfmfb1q"
+path="res://.godot/imported/professor_dialogue1.dialogue-1549f01459ae07f482342d51c2ca5804.tres"
+
+[deps]
+
+source_file="res://dialogue/professor_dialogue1.dialogue"
+dest_files=["res://.godot/imported/professor_dialogue1.dialogue-1549f01459ae07f482342d51c2ca5804.tres"]
+
+[params]
+
+defaults=true
