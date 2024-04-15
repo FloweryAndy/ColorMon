@@ -1,0 +1,220 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgumb3icjy0ld"]
+
+[ext_resource type="PackedScene" uid="uid://b2ng2h4jht8ox" path="res://object/world/invisible_tall_grass_patch_25x_25.tscn" id="1_p43u0"]
+
+[node name="TooManyInvisibleTallGrassPatches" type="Node3D"]
+
+[node name="InvisibleTallGrassPatch25x25_1" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 21)
+
+[node name="InvisibleTallGrassPatch25x25_2" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21)
+
+[node name="InvisibleTallGrassPatch25x25_3" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 21)
+
+[node name="InvisibleTallGrassPatch25x25_4" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 32)
+
+[node name="InvisibleTallGrassPatch25x25_5" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32)
+
+[node name="InvisibleTallGrassPatch25x25_6" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 32)
+
+[node name="InvisibleTallGrassPatch25x25_7" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 21)
+
+[node name="InvisibleTallGrassPatch25x25_8" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 21)
+
+[node name="InvisibleTallGrassPatch25x25_9" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 21)
+
+[node name="InvisibleTallGrassPatch25x25_10" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 32)
+
+[node name="InvisibleTallGrassPatch25x25_11" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 32)
+
+[node name="InvisibleTallGrassPatch25x25_12" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 32)
+
+[node name="InvisibleTallGrassPatch25x25_13" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 21)
+
+[node name="InvisibleTallGrassPatch25x25_14" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 21)
+
+[node name="InvisibleTallGrassPatch25x25_15" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 21)
+
+[node name="InvisibleTallGrassPatch25x25_16" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 32)
+
+[node name="InvisibleTallGrassPatch25x25_17" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 32)
+
+[node name="InvisibleTallGrassPatch25x25_18" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 32)
+
+[node name="InvisibleTallGrassPatch25x25_19" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="InvisibleTallGrassPatch25x25_20" parent="." instance=ExtResource("1_p43u0")]
+
+[node name="InvisibleTallGrassPatch25x25_21" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="InvisibleTallGrassPatch25x25_22" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 11)
+
+[node name="InvisibleTallGrassPatch25x25_23" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+
+[node name="InvisibleTallGrassPatch25x25_24" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 11)
+
+[node name="InvisibleTallGrassPatch25x25_25" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="InvisibleTallGrassPatch25x25_26" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="InvisibleTallGrassPatch25x25_27" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+
+[node name="InvisibleTallGrassPatch25x25_28" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 11)
+
+[node name="InvisibleTallGrassPatch25x25_29" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 11)
+
+[node name="InvisibleTallGrassPatch25x25_30" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 11)
+
+[node name="InvisibleTallGrassPatch25x25_31" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
+
+[node name="InvisibleTallGrassPatch25x25_32" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0)
+
+[node name="InvisibleTallGrassPatch25x25_33" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
+
+[node name="InvisibleTallGrassPatch25x25_34" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 11)
+
+[node name="InvisibleTallGrassPatch25x25_35" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 11)
+
+[node name="InvisibleTallGrassPatch25x25_36" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 11)
+
+[node name="InvisibleTallGrassPatch25x25_37" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -15)
+
+[node name="InvisibleTallGrassPatch25x25_38" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+
+[node name="InvisibleTallGrassPatch25x25_39" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -15)
+
+[node name="InvisibleTallGrassPatch25x25_40" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -4)
+
+[node name="InvisibleTallGrassPatch25x25_41" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="InvisibleTallGrassPatch25x25_42" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -4)
+
+[node name="InvisibleTallGrassPatch25x25_43" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -15)
+
+[node name="InvisibleTallGrassPatch25x25_44" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -15)
+
+[node name="InvisibleTallGrassPatch25x25_45" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -15)
+
+[node name="InvisibleTallGrassPatch25x25_46" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -4)
+
+[node name="InvisibleTallGrassPatch25x25_47" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -4)
+
+[node name="InvisibleTallGrassPatch25x25_48" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -4)
+
+[node name="InvisibleTallGrassPatch25x25_49" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -15)
+
+[node name="InvisibleTallGrassPatch25x25_50" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -15)
+
+[node name="InvisibleTallGrassPatch25x25_51" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -15)
+
+[node name="InvisibleTallGrassPatch25x25_52" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -4)
+
+[node name="InvisibleTallGrassPatch25x25_53" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -4)
+
+[node name="InvisibleTallGrassPatch25x25_54" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -4)
+
+[node name="InvisibleTallGrassPatch25x25_55" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -36)
+
+[node name="InvisibleTallGrassPatch25x25_56" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36)
+
+[node name="InvisibleTallGrassPatch25x25_57" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -36)
+
+[node name="InvisibleTallGrassPatch25x25_58" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -25)
+
+[node name="InvisibleTallGrassPatch25x25_59" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
+
+[node name="InvisibleTallGrassPatch25x25_60" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -25)
+
+[node name="InvisibleTallGrassPatch25x25_61" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -36)
+
+[node name="InvisibleTallGrassPatch25x25_62" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -36)
+
+[node name="InvisibleTallGrassPatch25x25_63" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -36)
+
+[node name="InvisibleTallGrassPatch25x25_64" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -25)
+
+[node name="InvisibleTallGrassPatch25x25_65" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -25)
+
+[node name="InvisibleTallGrassPatch25x25_66" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -25)
+
+[node name="InvisibleTallGrassPatch25x25_67" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -36)
+
+[node name="InvisibleTallGrassPatch25x25_68" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -36)
+
+[node name="InvisibleTallGrassPatch25x25_69" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -36)
+
+[node name="InvisibleTallGrassPatch25x25_70" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -25)
+
+[node name="InvisibleTallGrassPatch25x25_71" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -25)
+
+[node name="InvisibleTallGrassPatch25x25_72" parent="." instance=ExtResource("1_p43u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -25)

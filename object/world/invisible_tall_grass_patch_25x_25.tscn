@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2ng2h4jht8ox"]
+
+[ext_resource type="PackedScene" uid="uid://d3oa44fa185p0" path="res://object/world/invisible_tall_grass.tscn" id="1_elilr"]
+
+[node name="InvisibleTallGrassPatch25x25" type="Node3D"]
+
+[node name="InvisibleTallGrass" parent="." instance=ExtResource("1_elilr")]
+
+[node name="InvisibleTallGrass2" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="InvisibleTallGrass3" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="InvisibleTallGrass4" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="InvisibleTallGrass5" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="InvisibleTallGrass6" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
+
+[node name="InvisibleTallGrass7" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="InvisibleTallGrass8" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="InvisibleTallGrass9" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="InvisibleTallGrass10" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="InvisibleTallGrass11" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
+
+[node name="InvisibleTallGrass12" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="InvisibleTallGrass13" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="InvisibleTallGrass14" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="InvisibleTallGrass15" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+
+[node name="InvisibleTallGrass16" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="InvisibleTallGrass17" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
+
+[node name="InvisibleTallGrass18" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="InvisibleTallGrass19" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
+
+[node name="InvisibleTallGrass20" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="InvisibleTallGrass21" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="InvisibleTallGrass22" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="InvisibleTallGrass23" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="InvisibleTallGrass24" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="InvisibleTallGrass25" parent="." instance=ExtResource("1_elilr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
