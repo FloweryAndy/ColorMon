@@ -1,8 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1xnhwoq5oo2i"]
+[gd_scene load_steps=9 format=3 uid="uid://c1xnhwoq5oo2i"]
 
 [ext_resource type="Script" path="res://ui/game_start.gd" id="1_xox8v"]
 [ext_resource type="Script" path="res://ui/GameStartLabel.gd" id="2_atps5"]
 [ext_resource type="Texture2D" uid="uid://krbs74urw5fd" path="res://art/game_start.png" id="2_gjp2x"]
+[ext_resource type="Texture2D" uid="uid://buulgru0xlt6p" path="res://art/professor_sheet.png" id="4_m8sc6"]
+[ext_resource type="Script" path="res://ui/AnimatedSprite2D.gd" id="5_sqkjj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ku0t"]
+atlas = ExtResource("4_m8sc6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdvno"]
+atlas = ExtResource("4_m8sc6")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u1ccf"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_1ku0t")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_sdvno")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="GameStart" type="Control"]
 layout_mode = 3
@@ -47,3 +71,11 @@ text = "Press Confirm to Start
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_atps5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(527, 241)
+scale = Vector2(2.53906, 2.625)
+sprite_frames = SubResource("SpriteFrames_u1ccf")
+frame_progress = 0.343629
+script = ExtResource("5_sqkjj")
