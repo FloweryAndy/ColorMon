@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://ui/game_start.gd" id="1_xox8v"]
 [ext_resource type="Script" path="res://ui/GameStartLabel.gd" id="2_atps5"]
-[ext_resource type="Texture2D" uid="uid://da85027x5sgxg" path="res://art/battle_box.png" id="2_g316i"]
+[ext_resource type="Texture2D" uid="uid://krbs74urw5fd" path="res://art/game_start.png" id="2_gjp2x"]
 
 [node name="GameStart" type="Control"]
 layout_mode = 3
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_g316i")
+texture = ExtResource("2_gjp2x")
 patch_margin_left = 64
 patch_margin_top = 64
 patch_margin_right = 64
@@ -39,6 +39,8 @@ offset_right = 112.5
 offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "Press Confirm to Start
 (Z, Spacebar, Enter, O, A Button)"

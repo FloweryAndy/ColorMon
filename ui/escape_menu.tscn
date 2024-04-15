@@ -1,6 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmya000hgwvyx"]
+[gd_scene load_steps=15 format=3 uid="uid://cmya000hgwvyx"]
 
+[ext_resource type="Texture2D" uid="uid://da85027x5sgxg" path="res://art/battle_box.png" id="1_3ijkl"]
+[ext_resource type="Texture2D" uid="uid://krbs74urw5fd" path="res://art/game_start.png" id="1_12r0w"]
 [ext_resource type="Script" path="res://ui/OptionsMenu.gd" id="1_axwqo"]
+[ext_resource type="Texture2D" uid="uid://7khhaokokndy" path="res://art/option_box.png" id="3_w8ovp"]
+[ext_resource type="Texture2D" uid="uid://bwyi6rqpe5bga" path="res://art/hover_box.png" id="4_ccp2r"]
+[ext_resource type="Texture2D" uid="uid://cx7cwsaxgnue" path="res://art/dialogue_box.png" id="5_an0lm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1x6md"]
+texture = ExtResource("1_3ijkl")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xis07"]
+texture = ExtResource("1_3ijkl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbnr0"]
+texture = ExtResource("4_ccp2r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cktti"]
+texture = ExtResource("1_3ijkl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f81xm"]
+texture = ExtResource("1_3ijkl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p08r7"]
+texture = ExtResource("3_w8ovp")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4taby"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7i73o"]
 
 [node name="EscapeMenu" type="Control"]
 layout_mode = 3
@@ -22,11 +57,18 @@ theme_override_constants/margin_top = 128
 theme_override_constants/margin_right = 256
 theme_override_constants/margin_bottom = 128
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="NinePatchRect" parent="MarginContainer"]
 layout_mode = 2
+texture = ExtResource("1_12r0w")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
+offset_right = 640.0
+offset_bottom = 392.0
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
@@ -44,11 +86,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 4
 alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "ColorMon"
 horizontal_alignment = 1
@@ -69,12 +113,22 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_1x6md")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xis07")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mbnr0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cktti")
+theme_override_styles/focus = SubResource("StyleBoxTexture_f81xm")
 text = "Resume"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_1x6md")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xis07")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mbnr0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cktti")
+theme_override_styles/focus = SubResource("StyleBoxTexture_f81xm")
 text = "Exit Game"
 
 [node name="Empty" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer"]
@@ -83,6 +137,7 @@ layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = -2
 alignment = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2"]
@@ -91,6 +146,9 @@ alignment = 1
 
 [node name="MasterSliderLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2/VBoxContainer3"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
 text = "Master Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -101,6 +159,9 @@ custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_styles/slider = SubResource("StyleBoxTexture_p08r7")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_4taby")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_7i73o")
 min_value = -20.0
 max_value = 0.0
 value = -10.0
@@ -111,6 +172,9 @@ alignment = 1
 
 [node name="SFXSliderLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
 text = "SFX Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -121,6 +185,9 @@ custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_styles/slider = SubResource("StyleBoxTexture_p08r7")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_4taby")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_7i73o")
 min_value = -20.0
 max_value = 0.0
 value = -10.0
@@ -131,6 +198,9 @@ alignment = 1
 
 [node name="BGMSliderLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer2/VBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
 text = "BGM Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -141,16 +211,42 @@ custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_styles/slider = SubResource("StyleBoxTexture_p08r7")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_4taby")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_7i73o")
 min_value = -20.0
 max_value = 0.0
 value = -10.0
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer"]
+[node name="PanelContainer" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer"]
+custom_minimum_size = Vector2(320, 96)
 layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_an0lm")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/PanelContainer"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
 text = "Controls:
 Movement - WASD, Arrow Keys
 Confirm - Z, Spacebar, Enter, O, A Button
 Cancel - X, Backspace, P, B Button"
+vertical_alignment = 1
