@@ -9,6 +9,7 @@ var can_interact: bool = true
 var interactable: Node = null
 @onready var camera: Camera3D = $Camera3D
 @onready var interact_zone: Area3D = %InteractZone
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready():
@@ -31,8 +32,10 @@ func control_movement(delta: float) -> void:
 	var move_z = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	if move_x != 0 or move_z != 0:
 		move(Vector2(move_x, move_z), delta)
+		animation_player.play("ArmatureAction")
 	else:
 		velocity = Vector3.ZERO
+		animation_player.stop()
 
 
 func control_interaction(_delta: float) -> void:
