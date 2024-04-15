@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c5xlh57i67jcj"
+path="res://.godot/imported/player_lost.dialogue-cf244bec4348e012885fd1a9c11c4e65.tres"
+
+[deps]
+
+source_file="res://dialogue/player_lost.dialogue"
+dest_files=["res://.godot/imported/player_lost.dialogue-cf244bec4348e012885fd1a9c11c4e65.tres"]
+
+[params]
+
+defaults=true

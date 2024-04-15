@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://b7fsngocsg18i"
+path="res://.godot/imported/wild_mon_attack.dialogue-dd4861666fb6cb3319b8d078d5eb9b96.tres"
+
+[deps]
+
+source_file="res://dialogue/wild_mon_attack.dialogue"
+dest_files=["res://.godot/imported/wild_mon_attack.dialogue-dd4861666fb6cb3319b8d078d5eb9b96.tres"]
+
+[params]
+
+defaults=true

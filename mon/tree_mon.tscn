@@ -10,6 +10,7 @@ radius = 2.0
 height = 5.0
 
 [node name="TreeMon" instance=ExtResource("1_56uxe")]
+speed = 6
 attacks = Array[Resource]([ExtResource("2_s3ql8"), ExtResource("3_5f4sn")])
 
 [node name="treemon" parent="Mesh" index="0" instance=ExtResource("2_il3ao")]

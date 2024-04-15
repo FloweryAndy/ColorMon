@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dlf83wa0j1iiv"
+path="res://.godot/imported/player_won.dialogue-2540f4e0c86f168df8e5786d7f08dfde.tres"
+
+[deps]
+
+source_file="res://dialogue/player_won.dialogue"
+dest_files=["res://.godot/imported/player_won.dialogue-2540f4e0c86f168df8e5786d7f08dfde.tres"]
+
+[params]
+
+defaults=true

@@ -73,6 +73,7 @@ func _process(_delta):
 				if Input.is_action_just_pressed("confirm"):
 					menu_sound.play()
 					send_attack.emit(current_option_index)
+					current_option_index = 0
 					hide()
 				if Input.is_action_just_pressed("cancel"):
 					menu_sound.play()
@@ -97,6 +98,7 @@ func _process(_delta):
 				if Input.is_action_just_pressed("confirm"):
 					menu_sound.play()
 					send_item.emit(current_option_index)
+					current_option_index = 0
 					hide()
 				if Input.is_action_just_pressed("cancel"):
 					menu_sound.play()
@@ -146,8 +148,10 @@ func _process(_delta):
 					menu_sound.play()
 					if current_option_index == 0:
 						send_run.emit()
+						current_option_index = 0
 					else:
 						tab_container.current_tab = BattleMenuPages.MAIN_PAGE
+						current_option_index = 0
 				if Input.is_action_just_pressed("cancel"):
 					menu_sound.play()
 					tab_container.current_tab = BattleMenuPages.MAIN_PAGE

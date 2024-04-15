@@ -1,10 +1,21 @@
 ~ this_is_a_node_title
 
-Professor: Hello! Welcome to the Eventide Forest! You can call me the Professor. Now enlighten me. Are you a witch? Or a wizard?
-Professor: I see...and what is your moniker? 
-Professor: A [Witch/Wizard] called [Name]. Is that correct?
-Professor: There is a another like you who lives in this forest. They are a [Witch/Wizard] but what was thier moniker? [Enter Rival Name]
-Professor: Ah yes! Now I recall! They are a [Witch/Wizard] with the moniker [Rival name]!
-Professor: After you get settled in, come see me at my labratory!
+while Global.is_that_correct == false
+	Professor: Hello! Welcome to the Eventide Forest! You can call me the Professor. Now enlighten me. Are you a witch? Or a wizard?
+	do Global.choose_name()
+	Professor: I see...and what is your moniker? 
+	do Global.choose_gender()
+	Professor: A {{Global.player_gender}} called {{Global.player_name}}. Is that correct?
+	do Global.choose_is_that_correct()
+set Global.is_that_correct = false
+while Global.is_that_correct == false
+	do Global.choose_rival_gender()
+	Professor: There is a another like you who lives in this forest. They are a {{Global.rival_gender}} but what was their moniker?
+	do Global.choose_rival_name()
+	Professor: Ah yes! Now I recall! They are a {{Global.rival_gender}} with the moniker {{Global.rival_name}}! Is that correct?
+	do Global.choose_is_that_correct()
+set Global.is_that_correct = false
+Professor: Excellent!
+Professor: After you get settled in, come see me at my labratory.
 
 => END

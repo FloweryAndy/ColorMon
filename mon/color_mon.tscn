@@ -61,6 +61,7 @@ _data = {
 
 [node name="ColorMon" type="CharacterBody3D"]
 script = ExtResource("1_yrwmc")
+speed = 5
 attacks = Array[Resource]([ExtResource("2_ome5k")])
 max_health = 10
 

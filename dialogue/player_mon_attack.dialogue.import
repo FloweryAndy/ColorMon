@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://blseluw4eyhhh"
+path="res://.godot/imported/player_mon_attack.dialogue-ab139f89109f6c8698889a141857cafe.tres"
+
+[deps]
+
+source_file="res://dialogue/player_mon_attack.dialogue"
+dest_files=["res://.godot/imported/player_mon_attack.dialogue-ab139f89109f6c8698889a141857cafe.tres"]
+
+[params]
+
+defaults=true

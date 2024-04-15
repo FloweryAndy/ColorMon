@@ -9,6 +9,7 @@
 radius = 1.0
 
 [node name="TomatoMon" instance=ExtResource("1_fkpt7")]
+speed = 3
 attacks = Array[Resource]([ExtResource("2_io1ac"), ExtResource("3_itybc")])
 
 [node name="tomato" parent="Mesh" index="0" instance=ExtResource("2_dvv7f")]

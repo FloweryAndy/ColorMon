@@ -10,6 +10,7 @@ radius = 1.03873
 height = 5.332
 
 [node name="FishMon" instance=ExtResource("1_0abkj")]
+speed = 4
 attacks = Array[Resource]([ExtResource("2_ca6wf"), ExtResource("3_ly2di")])
 
 [node name="fishmon" parent="Mesh" index="0" instance=ExtResource("2_2owrd")]
