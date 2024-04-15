@@ -52,11 +52,13 @@ environment = SubResource("Environment_fecci")
 [node name="Overworld" parent="Level" instance=ExtResource("9_8f55a")]
 
 [node name="GameStart" parent="." instance=ExtResource("10_n3tmq")]
+process_mode = 1
 
 [node name="Interactable" parent="GameStart" instance=ExtResource("4_wbtn6")]
 dialogue = ExtResource("11_fwhn6")
 
 [node name="DialogueBox" parent="." instance=ExtResource("10_g3cro")]
+process_mode = 1
 visible = false
 
 [node name="EscapeMenu" parent="." instance=ExtResource("6_in2nh")]

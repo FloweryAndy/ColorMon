@@ -10,21 +10,37 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1x6md"]
 texture = ExtResource("1_3ijkl")
 texture_margin_left = 16.0
-texture_margin_top = 16.0
+texture_margin_top = 8.0
 texture_margin_right = 16.0
-texture_margin_bottom = 16.0
+texture_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xis07"]
 texture = ExtResource("1_3ijkl")
+texture_margin_left = 16.0
+texture_margin_top = 8.0
+texture_margin_right = 16.0
+texture_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbnr0"]
 texture = ExtResource("4_ccp2r")
+texture_margin_left = 16.0
+texture_margin_top = 8.0
+texture_margin_right = 16.0
+texture_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cktti"]
 texture = ExtResource("1_3ijkl")
+texture_margin_left = 16.0
+texture_margin_top = 8.0
+texture_margin_right = 16.0
+texture_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f81xm"]
 texture = ExtResource("1_3ijkl")
+texture_margin_left = 16.0
+texture_margin_top = 8.0
+texture_margin_right = 16.0
+texture_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p08r7"]
 texture = ExtResource("3_w8ovp")
@@ -119,6 +135,17 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_mbnr0")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cktti")
 theme_override_styles/focus = SubResource("StyleBoxTexture_f81xm")
 text = "Resume"
+
+[node name="FullscreenButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_1x6md")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xis07")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mbnr0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cktti")
+theme_override_styles/focus = SubResource("StyleBoxTexture_f81xm")
+text = "Full Screen"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true

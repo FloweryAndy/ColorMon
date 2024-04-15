@@ -1,6 +1,7 @@
 extends Control
 signal resume_pressed
 @onready var resume_button: Button = %ResumeButton
+@onready var fullscreen_button: Button = %FullscreenButton
 @onready var exit_button: Button = %ExitButton
 @onready var master_slider: HSlider = %MasterSlider
 @onready var sfx_slider: HSlider = %SFXSlider
@@ -12,11 +13,19 @@ func _ready():
 	sfx_slider.value_changed.connect(_on_volume_changed)
 	bgm_slider.value_changed.connect(_on_volume_changed)
 	resume_button.pressed.connect(_on_resume_pressed)
+	fullscreen_button.pressed.connect(_on_fullscreen_pressed)
 	exit_button.pressed.connect(_on_exit_pressed)
 
 
 func _on_resume_pressed():
 	emit_signal("resume_pressed")
+
+
+func _on_fullscreen_pressed():
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 
 func _on_exit_pressed():
