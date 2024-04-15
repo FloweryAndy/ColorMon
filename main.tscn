@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://b1sj3jjxfyqd7"]
+[gd_scene load_steps=17 format=3 uid="uid://b1sj3jjxfyqd7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_d5wbg"]
-[ext_resource type="PackedScene" uid="uid://bcgy5544ts3y" path="res://level/overworld.tscn" id="2_vsss7"]
 [ext_resource type="PackedScene" uid="uid://bywwxlgih6r4b" path="res://character/player.tscn" id="3_tbn7e"]
 [ext_resource type="PackedScene" uid="uid://vec8654ksik8" path="res://mon/tomato_mon.tscn" id="4_7sxnd"]
 [ext_resource type="PackedScene" uid="uid://ckvig7w7st160" path="res://component/interactable.tscn" id="4_wbtn6"]
@@ -12,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://cmya000hgwvyx" path="res://ui/escape_menu.tscn" id="6_in2nh"]
 [ext_resource type="Resource" uid="uid://d1dibitq1mp5k" path="res://dialogue/rival_dialogue1.dialogue" id="7_14hbj"]
 [ext_resource type="AudioStream" uid="uid://c5fgcp2iutmiu" path="res://sfx/confirm.ogg" id="7_jdy25"]
+[ext_resource type="PackedScene" uid="uid://bcgy5544ts3y" path="res://level/overworld.tscn" id="9_8f55a"]
 [ext_resource type="PackedScene" uid="uid://ctwfu1hvoy7gq" path="res://ui/dialogue_box.tscn" id="10_g3cro"]
+[ext_resource type="PackedScene" uid="uid://c1xnhwoq5oo2i" path="res://ui/game_start.tscn" id="10_n3tmq"]
+[ext_resource type="Resource" uid="uid://do555kskdprpw" path="res://dialogue/game_start.dialogue" id="11_fwhn6"]
 
 [sub_resource type="Environment" id="Environment_fecci"]
 
@@ -22,8 +24,6 @@ script = ExtResource("1_d5wbg")
 
 [node name="Level" type="Node3D" parent="."]
 process_mode = 1
-
-[node name="Overworld" parent="Level" instance=ExtResource("2_vsss7")]
 
 [node name="Professor" parent="Level" instance=ExtResource("5_gy5og")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -25, 2.25, 19)
@@ -48,16 +48,26 @@ player_mon = ExtResource("4_7sxnd")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
 environment = SubResource("Environment_fecci")
 
+[node name="Overworld" parent="Level" instance=ExtResource("9_8f55a")]
+
+[node name="GameStart" parent="." instance=ExtResource("10_n3tmq")]
+
+[node name="Interactable" parent="GameStart" instance=ExtResource("4_wbtn6")]
+dialogue = ExtResource("11_fwhn6")
+
 [node name="DialogueBox" parent="." instance=ExtResource("10_g3cro")]
 visible = false
 
 [node name="EscapeMenu" parent="." instance=ExtResource("6_in2nh")]
 visible = false
 
-[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+[node name="OverworldBGMPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_2d4ps")
 volume_db = -4.0
-autoplay = true
+bus = &"BGM"
+
+[node name="GameStartBGMPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -4.0
 bus = &"BGM"
 
 [node name="MenuSound" type="AudioStreamPlayer" parent="."]

@@ -44,6 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 16
 alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer"]
@@ -143,3 +144,13 @@ size_flags_vertical = 1
 min_value = -20.0
 max_value = 0.0
 value = -10.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/OptionsMenu/VBoxContainer/PanelContainer"]
+layout_mode = 2
+text = "Controls:
+Movement - WASD, Arrow Keys
+Confirm - Z, Spacebar, Enter, O, A Button
+Cancel - X, Backspace, P, B Button"
