@@ -10,6 +10,9 @@ var interactable: Node = null
 @onready var camera: Camera3D = $Camera3D
 @onready var interact_zone: Area3D = %InteractZone
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var paintbrush_mesh: Node3D = %PaintbrushMesh
+@onready var witch_hat: Node3D = $CharacterMesh/witch_hat
+@onready var wizard_hat: Node3D = $CharacterMesh/wizard_hat
 
 
 func _ready():

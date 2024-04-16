@@ -11,6 +11,7 @@ var is_that_correct: bool = false
 var game_start: Control
 var starter_selector: Control
 var player: Character
+var rival: Character
 var player_mon_name: String
 var wild_mon_name: String
 
@@ -19,6 +20,7 @@ func _ready():
 	game_start = get_tree().get_root().get_node("Main/GameStart")
 	starter_selector = get_tree().get_root().get_node("Main/StarterSelector")
 	player = get_tree().get_first_node_in_group("player")
+	rival = get_tree().get_first_node_in_group("rival")
 
 
 func choose_gender():
@@ -46,3 +48,18 @@ func choose_starter():
 
 func choose_is_that_correct():
 	await game_start.choose_is_that_correct()
+
+
+func give_paintbrush():
+	player.paintbrush_mesh.show()
+
+
+func give_hats():
+	if player_gender == "Witch":
+		player.witch_hat.show()
+	else:
+		player.wizard_hat.show()
+	if rival_gender == "Witch":
+		rival.witch_hat.show()
+	else:
+		rival.wizard_hat.show()

@@ -16,6 +16,9 @@ if Global.starter_mon == "Default_Mon"
 		Professor: Ah the green colormon Treemon! They will make a fine partner!
 	if Global.starter_mon == "Fishmon"
 		Professor: Ah the blue colormon Fishmon! They will make a fine partner!
+	Professor: Here is your Palette and Paintbrush.
+	do Global.give_paintbrush()
+	Professor: Use the Palette to Summon ColorMon during battle and the Paintbrush to Mix new ColorMon!
 else
 	Professor: Hope the adventure is going well!
 

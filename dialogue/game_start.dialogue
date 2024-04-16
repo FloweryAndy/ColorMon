@@ -17,5 +17,6 @@ while Global.is_that_correct == false
 set Global.is_that_correct = false
 Professor: Excellent!
 Professor: After you get settled in, come see me at my labratory.
+do Global.give_hats()
 
 => END

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bywwxlgih6r4b"]
+[gd_scene load_steps=15 format=3 uid="uid://bywwxlgih6r4b"]
 
 [ext_resource type="PackedScene" uid="uid://botdayj5qtmm5" path="res://character/character.tscn" id="1_is16n"]
 [ext_resource type="Script" path="res://character/player.gd" id="2_bo7hf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c6i1cqt4wra6" path="res://model/wizard_hat.glb" id="3_nlb5g"]
 [ext_resource type="PackedScene" uid="uid://ckvig7w7st160" path="res://component/interactable.tscn" id="6_3te6o"]
 [ext_resource type="Resource" uid="uid://806b1p3puwca" path="res://dialogue/no_colormon.dialogue" id="7_rar1v"]
+[ext_resource type="PackedScene" uid="uid://bt0htvq4vnf4v" path="res://model/paintbrush.glb" id="8_0napo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vsnty"]
 resource_name = "Material"
@@ -142,6 +143,7 @@ skin = SubResource("Skin_rts41")
 
 [node name="witch_hat" parent="CharacterMesh" index="1" instance=ExtResource("2_re0bc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25, 0)
+visible = false
 
 [node name="wizard_hat" parent="CharacterMesh" index="2" instance=ExtResource("3_nlb5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25, 0)
@@ -156,6 +158,14 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterMesh/InteractZone" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.66144)
 shape = SubResource("SphereShape3D_a0481")
+
+[node name="PaintbrushMesh" type="Node3D" parent="CharacterMesh" index="4"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 2, -0.4)
+visible = false
+
+[node name="paintbrush" parent="CharacterMesh/PaintbrushMesh" index="0" instance=ExtResource("8_0napo")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.3, -0.3)
 
 [node name="Camera3D" type="Camera3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 16, 12)
