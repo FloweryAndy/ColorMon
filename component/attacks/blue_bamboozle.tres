@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://djyvqjihh26ic"]
+
+[ext_resource type="Script" path="res://component/attacks/attack.gd" id="1_5c7dp"]
+
+[resource]
+script = ExtResource("1_5c7dp")
+type = 3
+attack_name = "Blue Bamboozle"
+attack_damage = 5

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkk5ubkv0nsby"]
+[gd_scene load_steps=7 format=3 uid="uid://dkk5ubkv0nsby"]
 
 [ext_resource type="PackedScene" uid="uid://dtwcrksdqqql3" path="res://mon/color_mon.tscn" id="1_ouxlu"]
 [ext_resource type="PackedScene" uid="uid://jawjjm3iwugo" path="res://model/cheesemon.glb" id="2_4lo4s"]
 [ext_resource type="Resource" uid="uid://ot6fhh17wbbs" path="res://component/attacks/scratch.tres" id="2_ql7mj"]
 [ext_resource type="Resource" uid="uid://bf5qu3qvm8chu" path="res://component/attacks/slice.tres" id="3_x5yjq"]
+[ext_resource type="Resource" uid="uid://1jy0alig174n" path="res://component/attacks/yellow_yell.tres" id="4_p66al"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uua7v"]
 radius = 2.0
@@ -12,7 +13,7 @@ height = 5.0
 [node name="CheeseMon" instance=ExtResource("1_ouxlu")]
 color_mon_name = "Cheesemon"
 speed = 3
-attacks = Array[Resource]([ExtResource("2_ql7mj"), ExtResource("3_x5yjq")])
+attacks = Array[Resource]([ExtResource("2_ql7mj"), ExtResource("3_x5yjq"), ExtResource("4_p66al")])
 
 [node name="cheesemon" parent="Mesh" index="0" instance=ExtResource("2_4lo4s")]
 

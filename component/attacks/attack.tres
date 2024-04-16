@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_wneae")
+type = 0
 attack_name = "Attack"
 attack_damage = 1

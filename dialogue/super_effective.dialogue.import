@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://hvxrk7y8a2ya"
+path="res://.godot/imported/super_effective.dialogue-fe91222ad26c974fa2f57270226a7dba.tres"
+
+[deps]
+
+source_file="res://dialogue/super_effective.dialogue"
+dest_files=["res://.godot/imported/super_effective.dialogue-fe91222ad26c974fa2f57270226a7dba.tres"]
+
+[params]
+
+defaults=true

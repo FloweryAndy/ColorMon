@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://dfjukvpaajf01"]
+
+[ext_resource type="Script" path="res://component/attacks/attack.gd" id="1_b275a"]
+
+[resource]
+script = ExtResource("1_b275a")
+type = 2
+attack_name = "Green Gobble"
+attack_damage = 5

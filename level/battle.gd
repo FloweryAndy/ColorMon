@@ -11,6 +11,8 @@ var player_mon_instance: ColorMon
 var wild_mon_instance: ColorMon
 var is_interacting: bool = false
 var canvas_ball_scene: PackedScene = load("res://object/canvas_ball.tscn")
+var player_mon_type
+var wild_mon_type
 @onready var player_mon_marker: Marker3D = $PlayerMonMarker
 @onready var player_marker: Marker3D = $PlayerMarker
 @onready var wild_mon_marker: Marker3D = $WildMonMarker
@@ -57,6 +59,8 @@ func _ready():
 		player_mon_health_bar.set_max_health(player_mon_instance.max_health)
 		wild_mon_health_bar.update(wild_mon_instance.health)
 		player_mon_health_bar.update(player_mon_instance.health)
+		player_mon_type = player_mon_instance.type
+		wild_mon_type = wild_mon_instance.type
 
 
 func _input(_event):
@@ -71,27 +75,111 @@ func _process(delta):
 
 func player_mon_attack(index: int):
 	var attack = player_mon_instance.attacks[index]
+	var super_effective: bool = false
+	var not_effective: bool = false
+	var attack_type = attack.type
+	if attack_type == 1 and wild_mon_type == 2:
+		super_effective = true
+	if attack_type == 2 and wild_mon_type == 3:
+		super_effective = true
+	if attack_type == 3 and wild_mon_type == 1:
+		super_effective = true
+	if attack_type == 1 and wild_mon_type == 3:
+		not_effective = true
+	if attack_type == 2 and wild_mon_type == 1:
+		not_effective = true
+	if attack_type == 3 and wild_mon_type == 2:
+		not_effective = true
 	player_mon_instance.animation_player.play("attack")
 	await player_mon_instance.animation_player.animation_finished
-	Global.attack_damage = attack.attack_damage
-	Global.attack_name = attack.attack_name
-	interactable.dialogue = load("res://dialogue/player_mon_attack.dialogue")
-	is_interacting = await interactable.interact()
-	await interactable.dialogue_finished
-	wild_mon_instance.health -= attack.attack_damage
+	if super_effective:
+		Global.attack_damage = attack.attack_damage * 2
+		Global.attack_name = attack.attack_name
+		interactable.dialogue = load("res://dialogue/player_mon_attack.dialogue")
+		is_interacting = await interactable.interact()
+		await interactable.dialogue_finished
+		await get_tree().create_timer(0.5).timeout
+		interactable.dialogue = load("res://dialogue/super_effective.dialogue")
+		is_interacting = await interactable.interact()
+		await interactable.dialogue_finished
+		await get_tree().create_timer(0.5).timeout
+		wild_mon_instance.health -= attack.attack_damage * 2
+	elif not_effective:
+		Global.attack_damage = attack.attack_damage * 0.5
+		Global.attack_name = attack.attack_name
+		interactable.dialogue = load("res://dialogue/player_mon_attack.dialogue")
+		is_interacting = await interactable.interact()
+		await interactable.dialogue_finished
+		await get_tree().create_timer(0.5).timeout
+		interactable.dialogue = load("res://dialogue/not_effective.dialogue")
+		is_interacting = await interactable.interact()
+		await interactable.dialogue_finished
+		await get_tree().create_timer(0.5).timeout
+		wild_mon_instance.health -= attack.attack_damage * 0.5
+	else:
+		Global.attack_damage = attack.attack_damage
+		Global.attack_name = attack.attack_name
+		interactable.dialogue = load("res://dialogue/player_mon_attack.dialogue")
+		is_interacting = await interactable.interact()
+		await interactable.dialogue_finished
+		await get_tree().create_timer(0.5).timeout
+		wild_mon_instance.health -= attack.attack_damage
 	wild_mon_health_bar.update(wild_mon_instance.health)
 	await wild_mon_health_bar.tween_finished
 
 
 func wild_mon_attack():
+	var attack_index = randi_range(0, wild_mon_instance.attacks.size() - 1)
+	var attack = wild_mon_instance.attacks[attack_index]
+	var super_effective: bool = false
+	var not_effective: bool = false
+	var attack_type = attack.type
+	if attack_type == 1 and player_mon_type == 2:
+		super_effective = true
+	if attack_type == 2 and player_mon_type == 3:
+		super_effective = true
+	if attack_type == 3 and player_mon_type == 1:
+		super_effective = true
+	if attack_type == 1 and player_mon_type == 3:
+		not_effective = true
+	if attack_type == 2 and player_mon_type == 1:
+		not_effective = true
+	if attack_type == 3 and player_mon_type == 2:
+		not_effective = true
 	wild_mon_instance.animation_player.play("attack")
 	await wild_mon_instance.animation_player.animation_finished
-	Global.attack_damage = wild_mon_instance.attacks[0].attack_damage
-	Global.attack_name = wild_mon_instance.attacks[0].attack_name
-	interactable.dialogue = load("res://dialogue/wild_mon_attack.dialogue")
-	is_interacting = await interactable.interact()
-	await interactable.dialogue_finished
-	player_mon_instance.health -= wild_mon_instance.attacks[0].attack_damage
+	if super_effective:
+		Global.attack_damage = attack.attack_damage * 2
+		Global.attack_name = attack.attack_name
+		interactable.dialogue = load("res://dialogue/wild_mon_attack.dialogue")
+		is_interacting = await interactable.interact()
+		await interactable.dialogue_finished
+		await get_tree().create_timer(0.5).timeout
+		interactable.dialogue = load("res://dialogue/super_effective.dialogue")
+		is_interacting = await interactable.interact()
+		await interactable.dialogue_finished
+		await get_tree().create_timer(0.5).timeout
+		player_mon_instance.health -= attack.attack_damage * 2
+	elif not_effective:
+		Global.attack_damage = attack.attack_damage * 0.5
+		Global.attack_name = attack.attack_name
+		interactable.dialogue = load("res://dialogue/wild_mon_attack.dialogue")
+		is_interacting = await interactable.interact()
+		await interactable.dialogue_finished
+		await get_tree().create_timer(0.5).timeout
+		interactable.dialogue = load("res://dialogue/not_effective.dialogue")
+		is_interacting = await interactable.interact()
+		await interactable.dialogue_finished
+		await get_tree().create_timer(0.5).timeout
+		player_mon_instance.health -= attack.attack_damage * 0.5
+	else:
+		Global.attack_damage = attack.attack_damage
+		Global.attack_name = attack.attack_name
+		interactable.dialogue = load("res://dialogue/wild_mon_attack.dialogue")
+		is_interacting = await interactable.interact()
+		await interactable.dialogue_finished
+		await get_tree().create_timer(0.5).timeout
+		player_mon_instance.health -= attack.attack_damage
 	player_mon_health_bar.update(player_mon_instance.health)
 	await player_mon_health_bar.tween_finished
 

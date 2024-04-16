@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://vec8654ksik8"]
+[gd_scene load_steps=7 format=3 uid="uid://vec8654ksik8"]
 
 [ext_resource type="PackedScene" uid="uid://dtwcrksdqqql3" path="res://mon/color_mon.tscn" id="1_fkpt7"]
 [ext_resource type="PackedScene" uid="uid://x2bt4qcpehgk" path="res://model/tomato.glb" id="2_dvv7f"]
 [ext_resource type="Resource" uid="uid://782sisxecid4" path="res://component/attacks/slam.tres" id="2_io1ac"]
 [ext_resource type="Resource" uid="uid://ot6fhh17wbbs" path="res://component/attacks/scratch.tres" id="3_itybc"]
+[ext_resource type="Resource" uid="uid://q3hv1exn56oh" path="res://component/attacks/red_rumble.tres" id="4_7xgr1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uua7v"]
 radius = 1.0
@@ -11,7 +12,7 @@ radius = 1.0
 [node name="TomatoMon" instance=ExtResource("1_fkpt7")]
 color_mon_name = "Tomatomon"
 speed = 3
-attacks = Array[Resource]([ExtResource("2_io1ac"), ExtResource("3_itybc")])
+attacks = Array[Resource]([ExtResource("2_io1ac"), ExtResource("3_itybc"), ExtResource("4_7xgr1")])
 
 [node name="tomato" parent="Mesh" index="0" instance=ExtResource("2_dvv7f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

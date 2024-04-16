@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://kmpxe31aa5q6"
+path="res://.godot/imported/not_effective.dialogue-445f214e971355b391f6711f31c03ade.tres"
+
+[deps]
+
+source_file="res://dialogue/not_effective.dialogue"
+dest_files=["res://.godot/imported/not_effective.dialogue-445f214e971355b391f6711f31c03ade.tres"]
+
+[params]
+
+defaults=true
