@@ -119,4 +119,5 @@ func _on_interact_zone_entered(body: Node3D) -> void:
 
 
 func _on_interact_zone_exited(_body: Node3D) -> void:
-	interactable = null
+	if !is_interacting:
+		interactable = null
