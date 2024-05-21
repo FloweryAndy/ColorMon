@@ -58,11 +58,14 @@ func reset_menu():
 
 
 func main_page_input():
-	common_page_input(main_page, BattleMenuPages.MAIN_PAGE)
+	up_down_input(main_page)
+	if Input.is_action_just_pressed("confirm"):
+		confirm_input()
+		tab_container.current_tab = current_option_index + 1
 
 
 func attack_page_input():
-	common_page_input(attack_page, BattleMenuPages.ATTACK_PAGE)
+	up_down_input(attack_page)
 	if Input.is_action_just_pressed("confirm"):
 		send_attack.emit(current_option_index)
 		confirm_input()
@@ -71,7 +74,7 @@ func attack_page_input():
 
 
 func items_page_input():
-	common_page_input(items_page, BattleMenuPages.ITEMS_PAGE)
+	up_down_input(items_page)
 	if Input.is_action_just_pressed("confirm"):
 		send_item.emit(current_option_index)
 		confirm_input()
@@ -80,7 +83,7 @@ func items_page_input():
 
 
 func mons_page_input():
-	common_page_input(mons_page, BattleMenuPages.MONS_PAGE)
+	up_down_input(mons_page)
 	if Input.is_action_just_pressed("confirm"):
 		#send_mon.emit(current_option_index)
 		confirm_input()
@@ -89,7 +92,7 @@ func mons_page_input():
 
 
 func run_page_input():
-	common_page_input(run_page, BattleMenuPages.RUN_PAGE)
+	up_down_input(run_page)
 	if Input.is_action_just_pressed("confirm"):
 		if current_option_index == 0:
 			send_run.emit()
@@ -100,7 +103,7 @@ func run_page_input():
 		reset_menu()
 
 
-func common_page_input(page: Control, page_enum: BattleMenuPages):
+func up_down_input(page: Control):
 	if Input.is_action_just_pressed("move_up"):
 		menu_sound.play()
 		current_option_index -= 1
@@ -115,7 +118,3 @@ func common_page_input(page: Control, page_enum: BattleMenuPages):
 			current_option_index = 0
 		current_option = page.get_child(current_option_index)
 		current_option_hover.position.y = (current_option_index * 64 + current_option_index * 26)
-	if Input.is_action_just_pressed("confirm"):
-		menu_sound.play()
-		tab_container.current_tab = page_enum + 1
-		current_option_index = 0
