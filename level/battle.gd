@@ -224,6 +224,7 @@ func _on_send_attack(index: int):
 	battle_menu.tab_container.current_tab = 0
 	battle_menu.show()
 
+
 func check_battle_result():
 	if player_mon_instance.health <= 0:
 		interactable.dialogue = load("res://dialogue/player_lost.dialogue")
@@ -275,6 +276,7 @@ func _on_send_item(index: int):
 
 
 func _on_send_mon(index: int):
+	index = index
 	pass
 
 

@@ -35,125 +35,88 @@ func _process(_delta):
 		var current_page = tab_container.current_tab
 		match current_page:
 			BattleMenuPages.MAIN_PAGE:
-				if Input.is_action_just_pressed("move_up"):
-					menu_sound.play()
-					current_option_index -= 1
-					if current_option_index < 0:
-						current_option_index = main_page.get_child_count() - 1
-					current_option = main_page.get_child(current_option_index)
-				if Input.is_action_just_pressed("move_down"):
-					menu_sound.play()
-					current_option_index += 1
-					if current_option_index >= main_page.get_child_count():
-						current_option_index = 0
-					current_option = main_page.get_child(current_option_index)
-				current_option_hover.position.y = (
-					current_option_index * 64 + current_option_index * 26
-				)
-				if Input.is_action_just_pressed("confirm"):
-					menu_sound.play()
-					tab_container.current_tab = current_option_index + 1
-					current_option_index = 0
+				main_page_input()
 			BattleMenuPages.ATTACK_PAGE:
-				if Input.is_action_just_pressed("move_up"):
-					menu_sound.play()
-					current_option_index -= 1
-					if current_option_index < 0:
-						current_option_index = attack_page.get_child_count() - 1
-					current_option = attack_page.get_child(current_option_index)
-				if Input.is_action_just_pressed("move_down"):
-					menu_sound.play()
-					current_option_index += 1
-					if current_option_index >= attack_page.get_child_count():
-						current_option_index = 0
-					current_option = attack_page.get_child(current_option_index)
-				current_option_hover.position.y = (
-					current_option_index * 64 + current_option_index * 26
-				)
-				if Input.is_action_just_pressed("confirm"):
-					menu_sound.play()
-					send_attack.emit(current_option_index)
-					current_option_index = 0
-					hide()
-				if Input.is_action_just_pressed("cancel"):
-					menu_sound.play()
-					tab_container.current_tab = BattleMenuPages.MAIN_PAGE
-					current_option_index = 0
+				attack_page_input()
 			BattleMenuPages.ITEMS_PAGE:
-				if Input.is_action_just_pressed("move_up"):
-					menu_sound.play()
-					current_option_index -= 1
-					if current_option_index < 0:
-						current_option_index = items_page.get_child_count() - 1
-					current_option = items_page.get_child(current_option_index)
-				if Input.is_action_just_pressed("move_down"):
-					menu_sound.play()
-					current_option_index += 1
-					if current_option_index >= items_page.get_child_count():
-						current_option_index = 0
-					current_option = items_page.get_child(current_option_index)
-				current_option_hover.position.y = (
-					current_option_index * 64 + current_option_index * 26
-				)
-				if Input.is_action_just_pressed("confirm"):
-					menu_sound.play()
-					send_item.emit(current_option_index)
-					current_option_index = 0
-					hide()
-				if Input.is_action_just_pressed("cancel"):
-					menu_sound.play()
-					tab_container.current_tab = BattleMenuPages.MAIN_PAGE
-					current_option_index = 0
+				items_page_input()
 			BattleMenuPages.MONS_PAGE:
-				if Input.is_action_just_pressed("move_up"):
-					menu_sound.play()
-					current_option_index -= 1
-					if current_option_index < 0:
-						current_option_index = mons_page.get_child_count() - 1
-					current_option = mons_page.get_child(current_option_index)
-				current_option_hover.position.y = (
-					current_option_index * 64 + current_option_index * 26
-				)
-				if Input.is_action_just_pressed("move_down"):
-					menu_sound.play()
-					current_option_index += 1
-					if current_option_index >= mons_page.get_child_count():
-						current_option_index = 0
-					current_option = mons_page.get_child(current_option_index)
-				if Input.is_action_just_pressed("confirm"):
-					menu_sound.play()
-					#send_mon.emit(current_option_index)
-					#hide()
-					#current_option_index = 0
-				if Input.is_action_just_pressed("cancel"):
-					menu_sound.play()
-					tab_container.current_tab = BattleMenuPages.MAIN_PAGE
-					current_option_index = 0
+				mons_page_input()
 			BattleMenuPages.RUN_PAGE:
-				if Input.is_action_just_pressed("move_up"):
-					menu_sound.play()
-					current_option_index -= 1
-					if current_option_index < 0:
-						current_option_index = run_page.get_child_count() - 1
-					current_option = run_page.get_child(current_option_index)
-				current_option_hover.position.y = (
-					current_option_index * 64 + current_option_index * 26
-				)
-				if Input.is_action_just_pressed("move_down"):
-					menu_sound.play()
-					current_option_index += 1
-					if current_option_index >= run_page.get_child_count():
-						current_option_index = 0
-					current_option = run_page.get_child(current_option_index)
-				if Input.is_action_just_pressed("confirm"):
-					menu_sound.play()
-					if current_option_index == 0:
-						send_run.emit()
-						current_option_index = 0
-					else:
-						tab_container.current_tab = BattleMenuPages.MAIN_PAGE
-						current_option_index = 0
-				if Input.is_action_just_pressed("cancel"):
-					menu_sound.play()
-					tab_container.current_tab = BattleMenuPages.MAIN_PAGE
-					current_option_index = 0
+				run_page_input()
+
+
+func confirm_input():
+	menu_sound.play()
+	current_option_index = 0
+	hide()
+
+
+func reset_menu():
+	menu_sound.play()
+	tab_container.current_tab = BattleMenuPages.MAIN_PAGE
+	current_option_index = 0
+
+
+func main_page_input():
+	common_page_input(main_page, BattleMenuPages.MAIN_PAGE)
+
+
+func attack_page_input():
+	common_page_input(attack_page, BattleMenuPages.ATTACK_PAGE)
+	if Input.is_action_just_pressed("confirm"):
+		send_attack.emit(current_option_index)
+		confirm_input()
+	if Input.is_action_just_pressed("cancel"):
+		reset_menu()
+
+
+func items_page_input():
+	common_page_input(items_page, BattleMenuPages.ITEMS_PAGE)
+	if Input.is_action_just_pressed("confirm"):
+		send_item.emit(current_option_index)
+		confirm_input()
+	if Input.is_action_just_pressed("cancel"):
+		reset_menu()
+
+
+func mons_page_input():
+	common_page_input(mons_page, BattleMenuPages.MONS_PAGE)
+	if Input.is_action_just_pressed("confirm"):
+		#send_mon.emit(current_option_index)
+		confirm_input()
+	if Input.is_action_just_pressed("cancel"):
+		reset_menu()
+
+
+func run_page_input():
+	common_page_input(run_page, BattleMenuPages.RUN_PAGE)
+	if Input.is_action_just_pressed("confirm"):
+		if current_option_index == 0:
+			send_run.emit()
+			confirm_input()
+		else:
+			reset_menu()
+	if Input.is_action_just_pressed("cancel"):
+		reset_menu()
+
+
+func common_page_input(page: Control, page_enum: BattleMenuPages):
+	if Input.is_action_just_pressed("move_up"):
+		menu_sound.play()
+		current_option_index -= 1
+		if current_option_index < 0:
+			current_option_index = page.get_child_count() - 1
+		current_option = page.get_child(current_option_index)
+		current_option_hover.position.y = (current_option_index * 64 + current_option_index * 26)
+	if Input.is_action_just_pressed("move_down"):
+		menu_sound.play()
+		current_option_index += 1
+		if current_option_index >= page.get_child_count():
+			current_option_index = 0
+		current_option = page.get_child(current_option_index)
+		current_option_hover.position.y = (current_option_index * 64 + current_option_index * 26)
+	if Input.is_action_just_pressed("confirm"):
+		menu_sound.play()
+		tab_container.current_tab = page_enum + 1
+		current_option_index = 0
