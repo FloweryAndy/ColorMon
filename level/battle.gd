@@ -78,52 +78,62 @@ func player_mon_attack(index: int):
 	var super_effective: bool = false
 	var not_effective: bool = false
 	var attack_type = attack.type
-	if attack_type == 1 and wild_mon_type == 2:
-		super_effective = true
-	if attack_type == 2 and wild_mon_type == 3:
-		super_effective = true
-	if attack_type == 3 and wild_mon_type == 1:
-		super_effective = true
-	if attack_type == 1 and wild_mon_type == 3:
-		not_effective = true
-	if attack_type == 2 and wild_mon_type == 1:
-		not_effective = true
-	if attack_type == 3 and wild_mon_type == 2:
-		not_effective = true
+	match attack_type:
+		1:
+			match wild_mon_type:
+				2:
+					super_effective = true
+				3:
+					not_effective = true
+		2:
+			match wild_mon_type:
+				3:
+					super_effective = true
+				1:
+					not_effective = true
+		3:
+			match wild_mon_type:
+				1:
+					super_effective = true
+				2:
+					not_effective = true
 	player_mon_instance.animation_player.play("attack")
 	await player_mon_instance.animation_player.animation_finished
-	if super_effective:
-		Global.attack_damage = attack.attack_damage * 2
-		Global.attack_name = attack.attack_name
-		interactable.dialogue = load("res://dialogue/player_mon_attack.dialogue")
-		is_interacting = await interactable.interact()
-		await interactable.dialogue_finished
-		await get_tree().create_timer(0.5).timeout
-		interactable.dialogue = load("res://dialogue/super_effective.dialogue")
-		is_interacting = await interactable.interact()
-		await interactable.dialogue_finished
-		await get_tree().create_timer(0.5).timeout
-		wild_mon_instance.health -= attack.attack_damage * 2
-	elif not_effective:
-		Global.attack_damage = attack.attack_damage * 0.5
-		Global.attack_name = attack.attack_name
-		interactable.dialogue = load("res://dialogue/player_mon_attack.dialogue")
-		is_interacting = await interactable.interact()
-		await interactable.dialogue_finished
-		await get_tree().create_timer(0.5).timeout
-		interactable.dialogue = load("res://dialogue/not_effective.dialogue")
-		is_interacting = await interactable.interact()
-		await interactable.dialogue_finished
-		await get_tree().create_timer(0.5).timeout
-		wild_mon_instance.health -= attack.attack_damage * 0.5
-	else:
-		Global.attack_damage = attack.attack_damage
-		Global.attack_name = attack.attack_name
-		interactable.dialogue = load("res://dialogue/player_mon_attack.dialogue")
-		is_interacting = await interactable.interact()
-		await interactable.dialogue_finished
-		await get_tree().create_timer(0.5).timeout
-		wild_mon_instance.health -= attack.attack_damage
+	match super_effective:
+		true:
+			Global.attack_damage = attack.attack_damage * 2
+			Global.attack_name = attack.attack_name
+			interactable.dialogue = load("res://dialogue/player_mon_attack.dialogue")
+			is_interacting = await interactable.interact()
+			await interactable.dialogue_finished
+			await get_tree().create_timer(0.5).timeout
+			interactable.dialogue = load("res://dialogue/super_effective.dialogue")
+			is_interacting = await interactable.interact()
+			await interactable.dialogue_finished
+			await get_tree().create_timer(0.5).timeout
+			wild_mon_instance.health -= attack.attack_damage * 2
+		false:
+			match not_effective:
+				true:
+					Global.attack_damage = attack.attack_damage * 0.5
+					Global.attack_name = attack.attack_name
+					interactable.dialogue = load("res://dialogue/player_mon_attack.dialogue")
+					is_interacting = await interactable.interact()
+					await interactable.dialogue_finished
+					await get_tree().create_timer(0.5).timeout
+					interactable.dialogue = load("res://dialogue/not_effective.dialogue")
+					is_interacting = await interactable.interact()
+					await interactable.dialogue_finished
+					await get_tree().create_timer(0.5).timeout
+					wild_mon_instance.health -= attack.attack_damage * 0.5
+				false:
+					Global.attack_damage = attack.attack_damage
+					Global.attack_name = attack.attack_name
+					interactable.dialogue = load("res://dialogue/player_mon_attack.dialogue")
+					is_interacting = await interactable.interact()
+					await interactable.dialogue_finished
+					await get_tree().create_timer(0.5).timeout
+					wild_mon_instance.health -= attack.attack_damage
 	wild_mon_health_bar.update(wild_mon_instance.health)
 	await wild_mon_health_bar.tween_finished
 
@@ -134,52 +144,62 @@ func wild_mon_attack():
 	var super_effective: bool = false
 	var not_effective: bool = false
 	var attack_type = attack.type
-	if attack_type == 1 and player_mon_type == 2:
-		super_effective = true
-	if attack_type == 2 and player_mon_type == 3:
-		super_effective = true
-	if attack_type == 3 and player_mon_type == 1:
-		super_effective = true
-	if attack_type == 1 and player_mon_type == 3:
-		not_effective = true
-	if attack_type == 2 and player_mon_type == 1:
-		not_effective = true
-	if attack_type == 3 and player_mon_type == 2:
-		not_effective = true
+	match attack_type:
+		1:
+			match player_mon_type:
+				2:
+					super_effective = true
+				3:
+					not_effective = true
+		2:
+			match player_mon_type:
+				3:
+					super_effective = true
+				1:
+					not_effective = true
+		3:
+			match player_mon_type:
+				1:
+					super_effective = true
+				2:
+					not_effective = true
 	wild_mon_instance.animation_player.play("attack")
 	await wild_mon_instance.animation_player.animation_finished
-	if super_effective:
-		Global.attack_damage = attack.attack_damage * 2
-		Global.attack_name = attack.attack_name
-		interactable.dialogue = load("res://dialogue/wild_mon_attack.dialogue")
-		is_interacting = await interactable.interact()
-		await interactable.dialogue_finished
-		await get_tree().create_timer(0.5).timeout
-		interactable.dialogue = load("res://dialogue/super_effective.dialogue")
-		is_interacting = await interactable.interact()
-		await interactable.dialogue_finished
-		await get_tree().create_timer(0.5).timeout
-		player_mon_instance.health -= attack.attack_damage * 2
-	elif not_effective:
-		Global.attack_damage = attack.attack_damage * 0.5
-		Global.attack_name = attack.attack_name
-		interactable.dialogue = load("res://dialogue/wild_mon_attack.dialogue")
-		is_interacting = await interactable.interact()
-		await interactable.dialogue_finished
-		await get_tree().create_timer(0.5).timeout
-		interactable.dialogue = load("res://dialogue/not_effective.dialogue")
-		is_interacting = await interactable.interact()
-		await interactable.dialogue_finished
-		await get_tree().create_timer(0.5).timeout
-		player_mon_instance.health -= attack.attack_damage * 0.5
-	else:
-		Global.attack_damage = attack.attack_damage
-		Global.attack_name = attack.attack_name
-		interactable.dialogue = load("res://dialogue/wild_mon_attack.dialogue")
-		is_interacting = await interactable.interact()
-		await interactable.dialogue_finished
-		await get_tree().create_timer(0.5).timeout
-		player_mon_instance.health -= attack.attack_damage
+	match super_effective:
+		true:
+			Global.attack_damage = attack.attack_damage * 2
+			Global.attack_name = attack.attack_name
+			interactable.dialogue = load("res://dialogue/wild_mon_attack.dialogue")
+			is_interacting = await interactable.interact()
+			await interactable.dialogue_finished
+			await get_tree().create_timer(0.5).timeout
+			interactable.dialogue = load("res://dialogue/super_effective.dialogue")
+			is_interacting = await interactable.interact()
+			await interactable.dialogue_finished
+			await get_tree().create_timer(0.5).timeout
+			player_mon_instance.health -= attack.attack_damage * 2
+		false:
+			match not_effective:
+				true:
+					Global.attack_damage = attack.attack_damage * 0.5
+					Global.attack_name = attack.attack_name
+					interactable.dialogue = load("res://dialogue/wild_mon_attack.dialogue")
+					is_interacting = await interactable.interact()
+					await interactable.dialogue_finished
+					await get_tree().create_timer(0.5).timeout
+					interactable.dialogue = load("res://dialogue/not_effective.dialogue")
+					is_interacting = await interactable.interact()
+					await interactable.dialogue_finished
+					await get_tree().create_timer(0.5).timeout
+					player_mon_instance.health -= attack.attack_damage * 0.5
+				false:
+					Global.attack_damage = attack.attack_damage
+					Global.attack_name = attack.attack_name
+					interactable.dialogue = load("res://dialogue/wild_mon_attack.dialogue")
+					is_interacting = await interactable.interact()
+					await interactable.dialogue_finished
+					await get_tree().create_timer(0.5).timeout
+					player_mon_instance.health -= attack.attack_damage
 	player_mon_health_bar.update(player_mon_instance.health)
 	await player_mon_health_bar.tween_finished
 
@@ -198,6 +218,13 @@ func _on_send_attack(index: int):
 		if player_mon_instance.health > 0:
 			await player_mon_attack(index)
 			await get_tree().create_timer(0.5).timeout
+
+	check_battle_result()
+
+	battle_menu.tab_container.current_tab = 0
+	battle_menu.show()
+
+func check_battle_result():
 	if player_mon_instance.health <= 0:
 		interactable.dialogue = load("res://dialogue/player_lost.dialogue")
 		is_interacting = await interactable.interact()
@@ -206,7 +233,7 @@ func _on_send_attack(index: int):
 		print("player lost")
 		battle_finished.emit()
 		queue_free()
-	if wild_mon_instance.health <= 0:
+	elif wild_mon_instance.health <= 0:
 		interactable.dialogue = load("res://dialogue/player_won.dialogue")
 		is_interacting = await interactable.interact()
 		await interactable.dialogue_finished
@@ -214,8 +241,6 @@ func _on_send_attack(index: int):
 		print("player won")
 		battle_finished.emit()
 		queue_free()
-	battle_menu.tab_container.current_tab = 0
-	battle_menu.show()
 
 
 func _on_send_item(index: int):
@@ -244,14 +269,7 @@ func _on_send_item(index: int):
 			wild_mon_instance.show()
 			await wild_mon_attack()
 			await get_tree().create_timer(0.5).timeout
-			if player_mon_instance.health <= 0:
-				interactable.dialogue = load("res://dialogue/player_lost.dialogue")
-				is_interacting = await interactable.interact()
-				await interactable.dialogue_finished
-				player_lost.emit()
-				print("player lost")
-				battle_finished.emit()
-				queue_free()
+			check_battle_result()
 	battle_menu.tab_container.current_tab = 0
 	battle_menu.show()
 

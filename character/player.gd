@@ -14,6 +14,11 @@ var interactable: Node = null
 @onready var witch_hat: Node3D = $CharacterMesh/witch_hat
 @onready var wizard_hat: Node3D = $CharacterMesh/wizard_hat
 
+var mon_scenes: Dictionary = {
+	"Tomatomon": "res://mon/tomato_mon.tscn",
+	"Fishmon": "res://mon/fish_mon.tscn",
+	"Treemon": "res://mon/tree_mon.tscn"
+}
 
 func _ready():
 	main = get_tree().get_root().get_node("Main")
@@ -71,11 +76,10 @@ func check_tall_grass() -> void:
 			can_interact = true
 
 
-func do_planned_battle(planned_mon: PackedScene, trainer) -> void:
-	var marker = Marker3D.new()
+func do_battle(marker: Marker3D, opponent_mon: PackedScene, trainer = null) -> void:
 	get_parent().add_child(marker)
 	marker.global_position = global_position
-	var battle = main.start_battle(player_mon, planned_mon, self, trainer)
+	var battle = main.start_battle(player_mon, opponent_mon, self, trainer)
 	battle.battle_finished.connect(_on_battle_finished)
 	is_in_battle = true
 	camera.current = false
@@ -84,32 +88,20 @@ func do_planned_battle(planned_mon: PackedScene, trainer) -> void:
 	camera.current = true
 	global_position = marker.global_position
 
+func do_planned_battle(planned_mon: PackedScene, trainer) -> void:
+	var marker = Marker3D.new()
+	do_battle(marker, planned_mon, trainer)
 
 func do_wild_battle() -> void:
 	var marker = Marker3D.new()
-	get_parent().add_child(marker)
-	marker.global_position = global_position
-	var wild_mon: PackedScene = current_area.find_wild_mon()
-	var battle = main.start_battle(player_mon, wild_mon, self)
-	battle.battle_finished.connect(_on_battle_finished)
-	is_in_battle = true
-	camera.current = false
-	animation_player.stop()
-	await battle.battle_finished
-	is_in_battle = false
-	camera.current = true
+	do_battle(marker, current_area.find_wild_mon())
 	global_position = marker.global_position
 	look_at(global_position + Vector3.FORWARD, Vector3.UP)
 
 
 func set_mon(new_mon: String):
-	match new_mon:
-		"Tomatomon":
-			player_mon = load("res://mon/tomato_mon.tscn")
-		"Fishmon":
-			player_mon = load("res://mon/fish_mon.tscn")
-		"Treemon":
-			player_mon = load("res://mon/tree_mon.tscn")
+	if mon_scenes.has(new_mon):
+		player_mon = load(mon_scenes[new_mon])
 
 
 func _on_battle_finished() -> void:
