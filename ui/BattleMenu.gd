@@ -32,8 +32,7 @@ func _ready():
 
 func _process(_delta):
 	if visible:
-		var current_page = tab_container.current_tab
-		match current_page:
+		match tab_container.current_tab:
 			BattleMenuPages.MAIN_PAGE:
 				main_page_input()
 			BattleMenuPages.ATTACK_PAGE:
